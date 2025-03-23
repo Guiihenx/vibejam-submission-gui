@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import VibeButton from './VibeButton';
-import { Star, Sparkles, Send, Code, Terminal } from 'lucide-react';
+import { Star, Sparkles, Zap, Code } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -31,36 +31,40 @@ const Hero: React.FC = () => {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
-      {/* Decorative elements */}
+      {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Code year button now has the world art above it with rotation animation */}
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 z-0">
-          <img src="/lovable-uploads/dcd0e4d2-a96b-44e7-870d-190095e24b89.png" alt="UFO with globe" className="w-48 md:w-64 opacity-80 animate-spin-slow" />
+        {/* World map ABOVE hero content */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-15 pointer-events-none z-0">
+          <img 
+            src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
+            alt="World Map" 
+            className="w-[40vw] max-w-[400px] animate-spin-slow"
+          />
         </div>
         
-        <div className="absolute top-[15%] left-10 transform rotate-12">
-          <Star size={50} className="text-gray-200 animate-pulse-light" />
+        <div className="absolute top-20 left-10 transform rotate-12">
+          <Star size={50} className="text-gray-200" />
         </div>
         <div className="absolute bottom-20 right-20 transform -rotate-12">
-          <Star size={70} className="text-gray-200 animate-pulse-light" />
+          <Star size={70} className="text-gray-200" />
         </div>
         <div className="absolute top-1/3 right-10 transform rotate-45">
-          <Sparkles size={60} className="text-gray-200 animate-pulse-light" />
+          <Sparkles size={60} className="text-gray-200" />
         </div>
 
-        {/* Jet in right side with smooth animation */}
-        <div className="flying-element bottom-[20%] right-[15%] animate-float-element">
+        {/* Jet in right side, NO animation */}
+        <div className="flying-element bottom-[20%] right-[15%]" style={{ opacity: "0.7" }}>
           <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
         </div>
         
-        {/* UFO kept with smoother animation */}
-        <div className="flying-element top-[40%] right-[8%] animate-bounce-light">
+        {/* UFO kept in similar position */}
+        <div className="flying-element top-[70%] right-[8%] animate-bounce-light">
           <img src="/lovable-uploads/ebb5d507-5505-4561-895b-9d616a67c6e1.png" alt="UFO doodle" />
         </div>
         
-        {/* Code snippet illustration with enhanced animations */}
+        {/* Code snippet illustration with pastel colors and smaller size */}
         <div className="absolute bottom-[15%] left-[8%] z-0 opacity-80 code-snippet-card">
-          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-md hover:shadow-xl transition-all duration-500" style={{ maxWidth: "220px" }}>
+          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-md" style={{ maxWidth: "240px" }}>
             <div className="flex items-center mb-1">
               <Code size={16} className="mr-2" />
               <span className="font-handwritten text-xs">game.js</span>
@@ -81,13 +85,12 @@ const Hero: React.FC = () => {
       
       <div ref={sectionRef} className="container mx-auto px-6 relative z-10 section-animate">
         <div className="text-center max-w-4xl mx-auto">
-          <span className="inline-flex items-center px-4 py-1.5 mb-8 text-lg font-handwritten border-2 border-black rounded-full bg-gray-100 shadow-md code-year-button hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <Code size={18} className="mr-2 text-sky-500" />
-            <span className="font-mono">2025</span>
+          <span className="inline-block px-5 py-2 mb-8 text-xl font-handwritten border-2 border-black rounded-full bg-white shadow-md">
+            <span className="text-sky-400">2025</span>
           </span>
           
           <h1 className="doodle-title-large mb-10 leading-tight tracking-tight">
-            <Code size={28} className="inline-block mr-2 mb-1 text-sky-500" /> Vibe <span className="doodle-highlight-blue">Coding</span> Game Jam
+            Vibe <span className="doodle-highlight-blue">Coding</span> Game Jam
           </h1>
           
           <p className="doodle-text mb-12 max-w-3xl mx-auto leading-relaxed text-slate-700">
@@ -100,10 +103,10 @@ const Hero: React.FC = () => {
               href="http://jam.pieter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="submit-button-main group"
+              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
             >
               Submit Your Entry
-              <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Sparkles className="inline-block ml-2 w-5 h-5" />
             </a>
             
             <VibeButton />

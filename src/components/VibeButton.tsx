@@ -1,38 +1,33 @@
 
 import React, { useState } from 'react';
-import { Terminal, Code, Braces } from 'lucide-react';
+import { Sparkles, ZapIcon } from 'lucide-react';
 
 const VibeButton: React.FC = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isVibrating, setIsVibrating] = useState(false);
+  const [isGlowing, setIsGlowing] = useState(false);
   
-  const handleClick = () => {
-    if (isAnimating) return;
+  const handleVibrate = () => {
+    setIsVibrating(true);
+    setIsGlowing(true);
     
-    setIsAnimating(true);
-    
-    // Create code particles effect
+    // Create starburst effect
     const button = document.querySelector('.vibe-button');
     if (button) {
-      // Create code line particles
-      for (let i = 0; i < 12; i++) {
+      // Create colorful starburst particles
+      for (let i = 0; i < 16; i++) {
         const particle = document.createElement('span');
-        particle.classList.add('code-line-particle');
+        particle.classList.add('starburst-particle');
         
-        // Different code symbols
-        const symbols = ['{', '}', '<>', '()', '=>', '++', '::', '[]', '&&', '||', '--', '//'];
-        const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-        particle.textContent = randomSymbol;
+        // Set random pastel colors
+        const colors = ['#FFDEE2', '#D3E4FD', '#FDE1D3', '#E5DEFF', '#F2FCE2'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.background = randomColor;
         
-        // Position particles around the button
-        const angle = (i / 12) * 2 * Math.PI;
+        // Position particles in a circle around the button
+        const angle = (i / 16) * 2 * Math.PI;
         const distance = 40 + Math.random() * 30;
         particle.style.left = `calc(50% + ${Math.cos(angle) * distance}px)`;
         particle.style.top = `calc(50% + ${Math.sin(angle) * distance}px)`;
-        
-        // Color palette for code particles
-        const colors = ['#61dafb', '#9580ff', '#ff6b6b', '#ffd166', '#06d6a0'];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.color = randomColor;
         
         // Set random animation delays
         particle.style.animationDelay = `${i * 30}ms`;
@@ -40,43 +35,45 @@ const VibeButton: React.FC = () => {
         
         // Remove particle after animation
         setTimeout(() => {
-          if (particle && particle.parentNode) {
-            particle.remove();
-          }
-        }, 1500);
+          particle.remove();
+        }, 1000);
       }
       
-      // Add pulse ring effect
-      const ring = document.createElement('span');
-      ring.classList.add('code-pulse-ring');
-      button.appendChild(ring);
+      // Add a wave ripple effect
+      const ripple = document.createElement('span');
+      ripple.classList.add('wave-ripple');
+      button.appendChild(ripple);
       
-      // Remove ring after animation
+      // Remove ripple after animation
       setTimeout(() => {
-        if (ring && ring.parentNode) {
-          ring.remove();
-        }
-      }, 1500);
+        ripple.remove();
+      }, 1000);
     }
     
-    // Reset animation state
+    // Reset vibration after animation completes
     setTimeout(() => {
-      setIsAnimating(false);
+      setIsVibrating(false);
+    }, 600);
+    
+    // Reset glow after slightly longer
+    setTimeout(() => {
+      setIsGlowing(false);
     }, 1500);
   };
   
   return (
     <button
-      onClick={handleClick}
-      className={`vibe-button relative overflow-hidden ${isAnimating ? 'animate-pulse-light' : ''}`}
-      aria-label="Run code"
-      disabled={isAnimating}
+      onClick={handleVibrate}
+      className={`vibe-button doodle-button inline-flex items-center justify-center gap-2 relative overflow-hidden ${
+        isVibrating ? 'animate-wiggle' : ''
+      } ${
+        isGlowing ? 'vibe-glow' : ''
+      } bg-gradient-to-r from-sky-50 to-white hover:from-sky-100 hover:to-white`}
+      aria-label="Click to vibrate"
     >
-      <span className="flex items-center gap-2 relative z-10">
-        <Terminal className="w-5 h-5 text-indigo-500" />
-        <span className="font-mono">run(vibeCode)</span>
-        <Code className={`w-5 h-5 text-indigo-500 transition-all ${isAnimating ? 'animate-pulse-light' : 'opacity-70'}`} />
-      </span>
+      <ZapIcon className="w-5 h-5 text-yellow-400" />
+      <span>Feel the vibe</span>
+      <Sparkles className={`w-5 h-5 text-yellow-400 transition-all ${isGlowing ? 'animate-pulse-light' : 'opacity-70'}`} />
     </button>
   );
 };

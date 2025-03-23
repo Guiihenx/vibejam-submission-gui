@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Zap, Code, ExternalLink } from 'lucide-react';
+import { Zap, Code } from 'lucide-react';
 
 const SponsorsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -79,15 +79,7 @@ const SponsorsSection: React.FC = () => {
             </div>
             
             <h3 className="doodle-title-medium mb-3">Bolt</h3>
-            <a 
-              href="https://twitter.com/boltdotnew" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="font-handwritten text-2xl text-vibejam-blue mb-4 squiggle-underline hover:text-sky-500 flex items-center justify-center gap-1 transition-colors"
-            >
-              @boltdotnew
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <p className="font-handwritten text-2xl text-vibejam-blue mb-4 squiggle-underline">@boltdotnew</p>
             <p className="doodle-text">
               Powering the future of development
             </p>
@@ -108,15 +100,7 @@ const SponsorsSection: React.FC = () => {
             </div>
             
             <h3 className="doodle-title-medium mb-3">Code Rabbit</h3>
-            <a 
-              href="https://twitter.com/coderabbitai" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="font-handwritten text-2xl text-vibejam-blue mb-4 squiggle-underline hover:text-sky-500 flex items-center justify-center gap-1 transition-colors"
-            >
-              @coderabbitai
-              <ExternalLink className="w-4 h-4" />
-            </a>
+            <p className="font-handwritten text-2xl text-vibejam-blue mb-4 squiggle-underline">@coderabbitai</p>
             <p className="doodle-text">
               AI-powered development assistant
             </p>

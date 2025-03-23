@@ -1,9 +1,0 @@
-
-/* Import all the refactored CSS files */
-@import './base.css';
-@import './animations.css';
-@import './code-snippets.css';
-@import './buttons.css';
-@import './cards.css';
-@import './utilities.css';
-@import './typography.css';
