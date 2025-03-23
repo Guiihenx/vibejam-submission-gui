@@ -1,12 +1,15 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Code, FileCode, GamepadIcon, Dice1, Joystick, Target, Puzzle, Cpu } from 'lucide-react';
 import XLogo from './XLogo';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 type JuryMember = {
   handle: string;
   name: string;
   role: string;
   icon: React.ReactNode;
+  image: string;
 };
 
 const juryMembers: JuryMember[] = [
@@ -14,31 +17,36 @@ const juryMembers: JuryMember[] = [
     handle: '@karpathy',
     name: 'Andrej Karpathy',
     role: 'AI Researcher',
-    icon: <Cpu className="w-8 h-8 text-indigo-500" />
+    icon: <Cpu className="w-8 h-8 text-indigo-500" />,
+    image: "/lovable-uploads/1cefcc9d-595e-479c-8787-a2a453af747b.png"
   },
   { 
     handle: '@timsoret',
     name: 'Tim Soret',
     role: 'Game Developer',
-    icon: <GamepadIcon className="w-8 h-8 text-green-500" />
+    icon: <GamepadIcon className="w-8 h-8 text-green-500" />,
+    image: "/lovable-uploads/31070deb-019d-4516-aa03-a29df2c20fb0.png"
   },
   { 
     handle: '@mrdoob',
     name: 'Ricardo Cabello',
     role: 'Creator of Three.js',
-    icon: <Puzzle className="w-8 h-8 text-violet-500" />
+    icon: <Puzzle className="w-8 h-8 text-violet-500" />,
+    image: "/lovable-uploads/af5d8ae6-4ec8-4851-a303-d38ef12d41b8.png"
   },
   { 
     handle: '@s13k_',
     name: 'S13k',
     role: 'Tech Innovator',
-    icon: <Target className="w-8 h-8 text-pink-500" />
+    icon: <Target className="w-8 h-8 text-pink-500" />,
+    image: "/lovable-uploads/e19ec94c-ba21-4b83-91b6-fca2ef6384c9.png"
   },
   { 
     handle: '@levelsio',
     name: 'Pieter Levels',
     role: 'Indie Maker',
-    icon: <Joystick className="w-8 h-8 text-amber-500" />
+    icon: <Joystick className="w-8 h-8 text-amber-500" />,
+    image: "/lovable-uploads/4ebbc7e1-6c16-4ae7-8094-90f23bc616f0.png"
   }
 ];
 
@@ -73,7 +81,7 @@ const JurySection: React.FC = () => {
       <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
       
       {/* Airplane decoration - REPOSITIONED and BIGGER SIZE */}
-      <div className="absolute top-1/3 right-[5%] z-10 w-48 md:w-72 xl:w-80 animate-plane">
+      <div className="absolute top-1/3 right-[10%] z-10 w-52 md:w-80 xl:w-96 animate-plane">
         <img 
           src="/lovable-uploads/3bda189a-ea9f-43b3-8140-3af1c8ae92cb.png" 
           alt="Airplane" 
@@ -124,11 +132,13 @@ const JurySection: React.FC = () => {
                 {member.icon}
               </div>
               
-              <div className="w-20 h-20 rounded-full border-2 border-black flex items-center justify-center mb-4 overflow-hidden bg-black text-white relative z-10 group-hover:scale-105 transition-all duration-300">
-                <div className="text-3xl font-terminal font-bold">
+              {/* Replace the initial letter with a profile image */}
+              <Avatar className="w-24 h-24 border-2 border-black mb-4 overflow-hidden relative z-10 group-hover:scale-105 transition-all duration-300">
+                <AvatarImage src={member.image} alt={member.name} className="object-cover" />
+                <AvatarFallback className="bg-black text-white text-3xl font-terminal font-bold">
                   {member.name.charAt(0)}
-                </div>
-              </div>
+                </AvatarFallback>
+              </Avatar>
               
               <h3 className="font-terminal text-2xl font-bold mb-2">{member.name}</h3>
               <p className="font-terminal text-lg mb-3">{member.role}</p>
