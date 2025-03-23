@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Zap, Code, FileCode } from 'lucide-react';
 import XLogo from './XLogo';
@@ -31,16 +30,6 @@ const SponsorsSection: React.FC = () => {
 
   return (
     <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
-      {/* Decorative ship illustration with enhanced float animation */}
-      <div className="absolute bottom-0 left-0 z-0 pointer-events-none animate-float-element">
-        <img 
-          src="/lovable-uploads/8553bec3-ce97-4fba-9542-9b5285e5a459.png" 
-          alt="Ship doodle" 
-          className="w-64 md:w-80"
-          style={{ opacity: "0.15" }}
-        />
-      </div>
-      
       {/* Enhanced code snippet illustration for sponsors section */}
       <div className="absolute top-40 right-20 z-0 opacity-90 code-snippet-card animate-float-slow">
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[3deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">

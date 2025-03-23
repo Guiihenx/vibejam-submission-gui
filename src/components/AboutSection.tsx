@@ -1,7 +1,10 @@
+
 import React, { useEffect, useRef } from 'react';
-import { PenTool, Gamepad2, Sparkles, Terminal, Braces } from 'lucide-react';
+import { PenTool, Gamepad2, Sparkles, Terminal, Braces, Code, ArrowRight } from 'lucide-react';
+
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -12,26 +15,79 @@ const AboutSection: React.FC = () => {
     }, {
       threshold: 0.1
     });
+    
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
+
   return <section id="about" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-white"></div>
       
-      {/* UFO illustration in bottom left */}
-      <div className="absolute bottom-10 left-10 z-10 w-28 md:w-40 xl:w-48 animate-ufo">
+      {/* UFO illustration in bottom left - MADE BIGGER and REPOSITIONED */}
+      <div className="absolute bottom-20 left-1/4 z-10 w-32 md:w-44 xl:w-52 animate-ufo">
         <img src="/lovable-uploads/288acc21-d9f3-46c3-a12d-7dd58be7e2f5.png" alt="UFO" className="w-full h-auto hover:scale-110 transition-all duration-700" />
       </div>
       
-      {/* Flying balloon decoration */}
-      <div className="flying-doodle top-20 right-10">
-        
+      {/* Arcade machine illustration */}
+      <div className="absolute top-1/4 right-20 z-10 w-32 md:w-44 xl:w-48 animate-float">
+        <img src="/lovable-uploads/4109ca1d-8ac0-44b2-93de-af04242e008b.png" alt="Arcade Machine" className="w-full h-auto hover:scale-110 transition-all duration-500" />
+      </div>
+      
+      {/* Mini code snippets scattered around */}
+      <div className="absolute top-32 left-16 z-10 code-snippet-mini animate-float-element" style={{ animationDelay: "1.3s" }}>
+        <div className="bg-white border border-black rounded p-1 transform rotate-[-3deg] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:rotate-[-1deg]">
+          <div className="flex items-center mb-1 bg-gradient-to-r from-pink-50 to-purple-50 p-1 rounded-t">
+            <Code size={10} className="mr-1 text-pink-500" />
+            <span className="font-terminal text-[8px] text-purple-700">player.js</span>
+          </div>
+          <pre className="text-left text-[6px] font-terminal bg-gradient-to-br from-pink-50 via-purple-50 to-white p-1 rounded">
+            <code className="code-highlight">
+              {`function move() { 
+  player.x += speed 
+}`}
+            </code>
+          </pre>
+        </div>
+      </div>
+      
+      <div className="absolute bottom-44 right-24 z-10 code-snippet-mini animate-float-element" style={{ animationDelay: "2.7s" }}>
+        <div className="bg-white border border-black rounded p-1 transform rotate-[2deg] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:rotate-[4deg]">
+          <div className="flex items-center mb-1 bg-gradient-to-r from-blue-50 to-cyan-50 p-1 rounded-t">
+            <Terminal size={10} className="mr-1 text-blue-500" />
+            <span className="font-terminal text-[8px] text-cyan-700">score.js</span>
+          </div>
+          <pre className="text-left text-[6px] font-terminal bg-gradient-to-br from-blue-50 via-cyan-50 to-white p-1 rounded">
+            <code className="code-highlight">
+              {`const score = 
+  kills * 100 + 
+  coins * 10`}
+            </code>
+          </pre>
+        </div>
+      </div>
+      
+      <div className="absolute top-56 right-40 z-10 code-snippet-mini animate-float-element" style={{ animationDelay: "3.5s" }}>
+        <div className="bg-white border border-black rounded p-1 transform rotate-[-5deg] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:rotate-[-3deg]">
+          <div className="flex items-center mb-1 bg-gradient-to-r from-amber-50 to-yellow-50 p-1 rounded-t">
+            <ArrowRight size={10} className="mr-1 text-amber-500" />
+            <span className="font-terminal text-[8px] text-amber-700">engine.js</span>
+          </div>
+          <pre className="text-left text-[6px] font-terminal bg-gradient-to-br from-amber-50 via-yellow-50 to-white p-1 rounded">
+            <code className="code-highlight">
+              {`ai.train(
+  model, 
+  gameData
+)`}
+            </code>
+          </pre>
+        </div>
       </div>
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
@@ -90,4 +146,5 @@ const AboutSection: React.FC = () => {
       </div>
     </section>;
 };
+
 export default AboutSection;

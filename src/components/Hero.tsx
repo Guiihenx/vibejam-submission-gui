@@ -38,8 +38,8 @@ const Hero: React.FC = () => {
         />
       </div>
       
-      {/* Rocket illustration in bottom right */}
-      <div className="absolute bottom-10 right-10 z-10 w-24 h-24 md:w-40 md:h-40 animate-rocket">
+      {/* Rocket illustration in bottom right - REPOSITIONED and BIGGER */}
+      <div className="absolute bottom-32 right-1/3 z-10 w-32 h-32 md:w-48 md:h-48 animate-rocket">
         <img 
           src="/lovable-uploads/8e247c81-02ed-4e0b-92fd-109966cb082c.png" 
           alt="Rocket" 
