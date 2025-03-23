@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import VibeButton from './VibeButton';
-import { Star, Sparkles, Zap, Code } from 'lucide-react';
+import { Star, Sparkles, Send, Code } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,14 +33,7 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* World map ABOVE hero content */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-15 pointer-events-none z-0">
-          <img 
-            src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
-            alt="World Map" 
-            className="w-[40vw] max-w-[400px] animate-spin-slow"
-          />
-        </div>
+        {/* World art removed from hero section */}
         
         <div className="absolute top-20 left-10 transform rotate-12">
           <Star size={50} className="text-gray-200" />
@@ -85,12 +78,13 @@ const Hero: React.FC = () => {
       
       <div ref={sectionRef} className="container mx-auto px-6 relative z-10 section-animate">
         <div className="text-center max-w-4xl mx-auto">
-          <span className="inline-block px-5 py-2 mb-8 text-xl font-handwritten border-2 border-black rounded-full bg-white shadow-md">
-            <span className="text-sky-400">2025</span>
+          <span className="inline-flex items-center px-4 py-1.5 mb-8 text-lg font-handwritten border-2 border-black rounded-full bg-gray-100 shadow-md">
+            <Code size={18} className="mr-2 text-sky-500" />
+            <span className="font-mono">2025</span>
           </span>
           
           <h1 className="doodle-title-large mb-10 leading-tight tracking-tight">
-            Vibe <span className="doodle-highlight-blue">Coding</span> Game Jam
+            <Code size={28} className="inline-block mr-2 mb-1 text-sky-500" /> Vibe <span className="doodle-highlight-blue">Coding</span> Game Jam
           </h1>
           
           <p className="doodle-text mb-12 max-w-3xl mx-auto leading-relaxed text-slate-700">
@@ -106,7 +100,7 @@ const Hero: React.FC = () => {
               className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
             >
               Submit Your Entry
-              <Sparkles className="inline-block ml-2 w-5 h-5" />
+              <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             
             <VibeButton />

@@ -66,20 +66,29 @@ const JurySection: React.FC = () => {
     <section id="jury" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
       
+      {/* World map added from hero section with rotation animation */}
+      <div className="absolute top-20 right-20 opacity-15 pointer-events-none z-0">
+        <img 
+          src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
+          alt="World Map" 
+          className="w-[30vw] max-w-[300px] animate-spin-slow"
+        />
+      </div>
+      
       {/* Code snippet illustration for jury section */}
       <div className="absolute top-20 left-20 z-0 opacity-80">
-        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-md">
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-md" style={{ maxWidth: "220px" }}>
           <div className="flex items-center mb-2">
             <Code size={18} className="mr-2" />
             <span className="font-handwritten text-sm">jury.js</span>
           </div>
           <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
             <code>
-{`async function evaluateGames() {
-  const entries = await fetchAll();
-  const jury = await assembleJury();
+{`async function <span class="text-sky-500">evaluateGames</span>() {
+  const <span class="text-green-500">entries</span> = await fetchAll();
+  const <span class="text-indigo-500">jury</span> = await assembleJury();
   
-  return jury.scoreGames(entries);
+  return <span class="text-indigo-500">jury</span>.<span class="text-pink-500">scoreGames</span>(entries);
 }`}
             </code>
           </pre>
@@ -88,7 +97,10 @@ const JurySection: React.FC = () => {
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
         <div className="text-center mb-16">
-          <h2 className="doodle-title-large mb-6">Meet the <span className="doodle-highlight-blue">Jury</span></h2>
+          <h2 className="doodle-title-large mb-6">
+            <Code size={28} className="inline-block mr-2 mb-1 text-sky-500" />
+            Meet the <span className="doodle-highlight-blue">Jury</span>
+          </h2>
           <p className="doodle-text max-w-2xl mx-auto">
             Industry experts who will review and select the most innovative game submissions.
           </p>
