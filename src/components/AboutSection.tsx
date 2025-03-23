@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Terminal, Gamepad2, Sparkles } from 'lucide-react';
+import { PenTool, Gamepad2, Sparkles } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -30,54 +30,53 @@ const AboutSection: React.FC = () => {
 
   return (
     <section id="about" className="py-24 px-6 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10 bg-vibejam-gray opacity-50"></div>
+      <div className="absolute inset-0 -z-10 bg-white"></div>
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About <span className="text-gradient">#vibejam</span></h2>
-          <p className="text-lg text-vibejam-dark-gray opacity-80 max-w-2xl mx-auto">
+          <h2 className="doodle-title mb-4">About <span className="doodle-highlight">#vibejam</span></h2>
+          <p className="font-handwritten text-lg max-w-2xl mx-auto">
             The intersection of artificial intelligence and creative coding to build the next generation of games.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="glass-card p-8 flex flex-col items-center text-center transform transition-all duration-400 hover:-translate-y-2">
-            <div className="w-14 h-14 bg-vibejam-blue bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-              <Terminal className="text-vibejam-blue w-7 h-7" />
+          <div className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-2">
+            <div className="w-14 h-14 border-2 border-black rounded-full flex items-center justify-center mb-6 bg-white">
+              <PenTool className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-semibold mb-3">AI-Powered</h3>
-            <p className="text-vibejam-dark-gray opacity-70">
+            <h3 className="doodle-title text-xl mb-3">AI-Powered</h3>
+            <p className="font-handwritten">
               Leverage artificial intelligence to enhance your game development process and create unique player experiences.
             </p>
           </div>
           
-          <div className="glass-card p-8 flex flex-col items-center text-center transform transition-all duration-400 hover:-translate-y-2">
-            <div className="w-14 h-14 bg-vibejam-blue bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-              <Gamepad2 className="text-vibejam-blue w-7 h-7" />
+          <div className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-2">
+            <div className="w-14 h-14 border-2 border-black rounded-full flex items-center justify-center mb-6 bg-white">
+              <Gamepad2 className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-semibold mb-3">Vibecoded</h3>
-            <p className="text-vibejam-dark-gray opacity-70">
+            <h3 className="doodle-title text-xl mb-3">Vibecoded</h3>
+            <p className="font-handwritten">
               Create games that resonate with players on an emotional level through innovative coding techniques and aesthetics.
             </p>
           </div>
           
-          <div className="glass-card p-8 flex flex-col items-center text-center transform transition-all duration-400 hover:-translate-y-2">
-            <div className="w-14 h-14 bg-vibejam-blue bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-              <Sparkles className="text-vibejam-blue w-7 h-7" />
+          <div className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-2">
+            <div className="w-14 h-14 border-2 border-black rounded-full flex items-center justify-center mb-6 bg-white">
+              <Sparkles className="w-7 h-7" />
             </div>
-            <h3 className="text-xl font-semibold mb-3">Innovative</h3>
-            <p className="text-vibejam-dark-gray opacity-70">
+            <h3 className="doodle-title text-xl mb-3">Innovative</h3>
+            <p className="font-handwritten">
               Push the boundaries of what's possible in game development by combining cutting-edge technologies with creative vision.
             </p>
           </div>
         </div>
         
         <div className="mt-20 text-center">
-          <div className="inline-block px-5 py-2 rounded-full bg-vibejam-dark-gray bg-opacity-5 font-medium text-vibejam-dark-gray mb-3">
+          <div className="inline-block px-5 py-2 rounded-full border-2 border-black font-handwritten text-lg mb-3">
             #vibejam
           </div>
-          <p className="text-xl max-w-2xl mx-auto">
+          <p className="font-handwritten text-xl max-w-2xl mx-auto">
             Join us for the first-ever game jam dedicated to AI-enhanced game development. Connect with like-minded creators, learn from industry experts, and showcase your innovative games.
           </p>
         </div>

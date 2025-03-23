@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Pencil } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,24 +25,25 @@ const Navbar: React.FC = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12",
         scrolled 
-          ? "bg-white bg-opacity-70 backdrop-blur-md shadow-sm" 
+          ? "bg-white bg-opacity-95 border-b-2 border-black" 
           : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="font-bold text-xl md:text-2xl">
-          <span className="text-gradient">#vibejam</span>
+        <div className="font-display text-xl md:text-2xl flex items-center">
+          <Pencil className="w-5 h-5 mr-2" />
+          <span className="doodle-highlight">#vibejam</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="text-vibejam-dark-gray hover:text-vibejam-blue transition-colors duration-300">About</a>
-          <a href="#jury" className="text-vibejam-dark-gray hover:text-vibejam-blue transition-colors duration-300">Jury</a>
-          <a href="#sponsors" className="text-vibejam-dark-gray hover:text-vibejam-blue transition-colors duration-300">Sponsors</a>
+          <a href="#about" className="font-handwritten text-lg hover:underline transition-all duration-300">About</a>
+          <a href="#jury" className="font-handwritten text-lg hover:underline transition-all duration-300">Jury</a>
+          <a href="#sponsors" className="font-handwritten text-lg hover:underline transition-all duration-300">Sponsors</a>
           <a 
             href="http://jam.pieter.com" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="button-shine px-4 py-2 bg-vibejam-blue text-white rounded-full hover:bg-opacity-90 transition-all duration-300"
+            className="doodle-button"
           >
             Submit Entry
           </a>

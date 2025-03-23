@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,6 +20,8 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+				handwritten: ['Caveat', 'cursive'],
+				display: ['Indie Flower', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -66,14 +67,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-        vibejam: {
-          blue: '#0070F3',
-          'light-blue': '#79C0FF',
-          gray: '#F5F5F7',
-          'dark-gray': '#1D1D1F',
-          black: '#000000',
-          white: '#FFFFFF',
-        }
+				vibejam: {
+					blue: '#333333',
+					'light-blue': '#777777',
+					gray: '#F7F7F7',
+					'dark-gray': '#333333',
+					black: '#000000',
+					white: '#FFFFFF',
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -97,52 +98,62 @@ export default {
 						height: '0'
 					}
 				},
-        'fade-in': {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' }
-        },
-        'float': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' }
-        },
-        'pulse-light': {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.7' }
-        },
-        'vibrate': {
-          '0%, 100%': { transform: 'translate(0)' },
-          '10%, 30%, 50%, 70%, 90%': { transform: 'translate(-1px)' },
-          '20%, 40%, 60%, 80%': { transform: 'translate(1px)' }
-        },
-        'scale-up': {
-          '0%': { transform: 'scale(0.95)', opacity: '0.8' },
-          '100%': { transform: 'scale(1)', opacity: '1' }
-        },
-        'gradient-move': {
-          '0%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' }
-        }
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' },
+				},
+				'draw-in': {
+					'0%': { strokeDashoffset: '1000' },
+					'100%': { strokeDashoffset: '0' },
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-light': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				'vibrate': {
+					'0%, 100%': { transform: 'translate(0)' },
+					'10%, 30%, 50%, 70%, 90%': { transform: 'translate(-1px)' },
+					'20%, 40%, 60%, 80%': { transform: 'translate(1px)' }
+				},
+				'scale-up': {
+					'0%': { transform: 'scale(0.95)', opacity: '0.8' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'gradient-move': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in': 'fade-in 0.6s ease-out forwards',
-        'fade-in-slow': 'fade-in 1s ease-out forwards',
-        'float': 'float 6s ease-in-out infinite',
-        'pulse-light': 'pulse-light 3s ease-in-out infinite',
-        'vibrate': 'vibrate 0.3s linear',
-        'vibrate-hover': 'vibrate 0.5s linear',
-        'scale-up': 'scale-up 0.3s ease-out forwards',
-        'gradient-move': 'gradient-move 3s ease infinite'
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'draw-in': 'draw-in 2s ease-in-out forwards',
+				'fade-in': 'fade-in 0.6s ease-out forwards',
+				'fade-in-slow': 'fade-in 1s ease-out forwards',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-light': 'pulse-light 3s ease-in-out infinite',
+				'vibrate': 'vibrate 0.3s linear',
+				'vibrate-hover': 'vibrate 0.5s linear',
+				'scale-up': 'scale-up 0.3s ease-out forwards',
+				'gradient-move': 'gradient-move 3s ease infinite'
 			},
-      backdropFilter: {
-        'none': 'none',
-        'blur': 'blur(20px)',
-      },
-      transitionDuration: {
-        '400': '400ms',
-      }
+			backdropFilter: {
+				'none': 'none',
+				'blur': 'blur(20px)',
+			},
+			transitionDuration: {
+				'400': '400ms',
+			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

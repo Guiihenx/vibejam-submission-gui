@@ -57,12 +57,43 @@
   }
 }
 
-.glass-card {
-  @apply relative bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-20 shadow-lg rounded-2xl;
+.doodle-card {
+  @apply relative bg-white border-2 border-black rounded-lg p-6;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 }
 
-.glass-effect {
-  @apply bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-20;
+.doodle-button {
+  @apply relative bg-white border-2 border-black rounded-full px-6 py-2 font-handwritten text-lg;
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+  transition: all 0.2s ease;
+}
+
+.doodle-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+}
+
+.doodle-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px rgba(0,0,0,1);
+}
+
+.doodle-text {
+  @apply font-handwritten;
+}
+
+.doodle-title {
+  @apply font-display text-3xl md:text-5xl font-bold;
+}
+
+.doodle-highlight {
+  @apply relative inline-block;
+}
+
+.doodle-highlight:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-3 bg-yellow-200 -z-10;
+  transform: rotate(-1deg);
 }
 
 .section-animate {
@@ -84,43 +115,19 @@
   scrollbar-width: none;  /* Firefox */
 }
 
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-vibejam-blue to-vibejam-light-blue;
-}
-
-.button-shine {
+.hand-drawn-border {
   position: relative;
-  overflow: hidden;
 }
 
-.button-shine::after {
+.hand-drawn-border:after {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: rotate(30deg);
-  transition: all 0.6s;
-  opacity: 0;
-}
-
-.button-shine:hover::after {
-  animation: shine 1.5s ease-out;
-  opacity: 1;
-}
-
-@keyframes shine {
-  0% {
-    transform: translateX(-100%) rotate(30deg);
-  }
-  100% {
-    transform: translateX(100%) rotate(30deg);
-  }
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid black;
+  border-radius: 15px;
+  transform: rotate(-0.5deg);
+  z-index: -1;
 }
