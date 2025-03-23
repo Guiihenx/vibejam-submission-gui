@@ -1,8 +1,11 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Star, Sparkles, Code, Terminal, GamepadIcon, Joystick, TerminalSquare, CodeSquare, Bug } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -13,19 +16,26 @@ const Hero: React.FC = () => {
     }, {
       threshold: 0.1
     });
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
+
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Gamepad image at the top of the header */}
-      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-24 h-24 md:w-32 md:h-32 z-10">
-        
+      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-24 h-24 md:w-40 md:h-40 z-10">
+        <img 
+          src="/lovable-uploads/3d2f00ca-8048-4211-98aa-fd3b609f94c9.png" 
+          alt="Gamepad" 
+          className="w-full h-full object-contain animate-float"
+        />
       </div>
       
       {/* Decorative elements - game and code related */}
@@ -93,7 +103,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      <div ref={sectionRef} className="container mx-auto px-6 relative z-10 section-animate">
+      <div ref={sectionRef} className="container mx-auto px-6 relative z-10 section-animate pt-20">
         <div className="text-center max-w-4xl mx-auto">
           {/* Enhanced 2025 button with code theme */}
           <div className="inline-block mb-8 code-year-badge">
@@ -112,7 +122,7 @@ const Hero: React.FC = () => {
           
           <h1 className="font-terminal font-bold mb-10 leading-tight tracking-tight text-4xl md:text-6xl">
             <Code className="w-8 h-8 inline-block mr-3 text-indigo-500" />
-            Vibe <span className="terminal-highlight">Game Jam</span>
+            Vibe <span className="terminal-highlight">Coding Game Jam</span>
           </h1>
           
           <p className="font-terminal text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-slate-700">
@@ -140,4 +150,5 @@ const Hero: React.FC = () => {
       </div>
     </section>;
 };
+
 export default Hero;

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Code, GitBranch, FileCode, Trophy, Award, GamepadIcon, Dice1, Joystick, Target, Puzzle, Cpu } from 'lucide-react';
+import { Code, FileCode, GamepadIcon, Dice1, Joystick, Target, Puzzle, Cpu } from 'lucide-react';
 import XLogo from './XLogo';
 
 type JuryMember = {
@@ -111,8 +111,8 @@ const JurySection: React.FC = () => {
               className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-3 hover:rotate-1 relative group"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Game-related icon floating around the card */}
-              <div className="absolute -top-4 -right-4 w-10 h-10 opacity-70 group-hover:opacity-100 transition-all duration-300 animate-float-element" style={{ animationDelay: `${index * 0.3}s` }}>
+              {/* Game-related floating icon - repositioned to not overlap */}
+              <div className="absolute -top-8 -right-8 transform rotate-12 transition-all duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:-translate-y-2">
                 {member.icon}
               </div>
               
