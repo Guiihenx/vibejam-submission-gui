@@ -1,0 +1,117 @@
+
+/* Enhanced highlight styles with hover effects */
+.doodle-highlight-hover {
+  @apply relative inline-block;
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-hover:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-blue-200 -z-10;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-hover:hover {
+  @apply text-blue-600;
+}
+
+.doodle-highlight-hover:hover:before {
+  content: '<';
+  @apply absolute -left-5 text-blue-400 opacity-0;
+  animation: slide-in 0.3s forwards;
+}
+
+.doodle-highlight-hover:hover:after {
+  @apply bg-blue-300;
+  height: 100%;
+  opacity: 0.3;
+  transform: rotate(0deg);
+}
+
+.doodle-highlight-green {
+  @apply relative inline-block;
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-green:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-green-200 -z-10;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-green:hover {
+  @apply text-green-600;
+}
+
+.doodle-highlight-green:hover:before {
+  content: '<';
+  @apply absolute -left-5 text-green-400 opacity-0;
+  animation: slide-in 0.3s forwards;
+}
+
+.doodle-highlight-green:hover:after {
+  @apply bg-green-300;
+  height: 100%;
+  opacity: 0.3;
+  transform: rotate(0deg);
+}
+
+.doodle-highlight-violet {
+  @apply relative inline-block;
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-violet:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-violet-200 -z-10;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-violet:hover {
+  @apply text-violet-600;
+}
+
+.doodle-highlight-violet:hover:before {
+  content: '<';
+  @apply absolute -left-5 text-violet-400 opacity-0;
+  animation: slide-in 0.3s forwards;
+}
+
+.doodle-highlight-violet:hover:after {
+  @apply bg-violet-300;
+  height: 100%;
+  opacity: 0.3;
+  transform: rotate(0deg);
+}
+
+.doodle-highlight-pink {
+  @apply relative inline-block;
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-pink:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-pink-200 -z-10;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-pink:hover {
+  @apply text-pink-600;
+}
+
+.doodle-highlight-pink:hover:before {
+  content: '<';
+  @apply absolute -left-5 text-pink-400 opacity-0;
+  animation: slide-in 0.3s forwards;
+}
+
+.doodle-highlight-pink:hover:after {
+  @apply bg-pink-300;
+  height: 100%;
+  opacity: 0.3;
+  transform: rotate(0deg);
+}
