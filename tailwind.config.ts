@@ -20,7 +20,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Quicksand', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+				sans: ['JetBrains Mono', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
 				handwritten: ['Architects Daughter', 'cursive'],
 				display: ['Architects Daughter', 'cursive'],
 				mono: ['JetBrains Mono', 'Fira Code', 'monospace'],

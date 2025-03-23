@@ -13,11 +13,11 @@
 }
 
 .doodle-highlight-hover:hover {
-  @apply text-blue-600;
+  @apply text-blue-600 font-mono;
 }
 
 .doodle-highlight-hover:hover:before {
-  content: '<';
+  content: '>';
   @apply absolute -left-5 text-blue-400 opacity-0;
   animation: slide-in 0.3s forwards;
 }
@@ -42,11 +42,11 @@
 }
 
 .doodle-highlight-green:hover {
-  @apply text-green-600;
+  @apply text-green-600 font-mono;
 }
 
 .doodle-highlight-green:hover:before {
-  content: '<';
+  content: '>';
   @apply absolute -left-5 text-green-400 opacity-0;
   animation: slide-in 0.3s forwards;
 }
@@ -71,11 +71,11 @@
 }
 
 .doodle-highlight-violet:hover {
-  @apply text-violet-600;
+  @apply text-violet-600 font-mono;
 }
 
 .doodle-highlight-violet:hover:before {
-  content: '<';
+  content: '>';
   @apply absolute -left-5 text-violet-400 opacity-0;
   animation: slide-in 0.3s forwards;
 }
@@ -100,11 +100,11 @@
 }
 
 .doodle-highlight-pink:hover {
-  @apply text-pink-600;
+  @apply text-pink-600 font-mono;
 }
 
 .doodle-highlight-pink:hover:before {
-  content: '<';
+  content: '>';
   @apply absolute -left-5 text-pink-400 opacity-0;
   animation: slide-in 0.3s forwards;
 }
