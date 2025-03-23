@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Code, GitBranch, FileCode, Trophy, Award, GamepadIcon, Dice, Joystick, Target, Puzzle, Cpu } from 'lucide-react';
+import { Code, GitBranch, FileCode, Trophy, Award, GamepadIcon, Dice1, Joystick, Target, Puzzle, Cpu } from 'lucide-react';
 import XLogo from './XLogo';
 
 type JuryMember = {
