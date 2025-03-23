@@ -1,0 +1,88 @@
+
+/* Enhanced code snippet styles */
+.code-highlight span {
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.glow-text {
+  text-shadow: 0 0 2px currentColor;
+}
+
+.glow-text:hover {
+  text-shadow: 0 0 8px currentColor;
+  transform: scale(1.05);
+}
+
+.code-snippet-card {
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.code-snippet-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced badge styles for 2025 */
+.code-year-badge {
+  transition: all 0.3s ease;
+}
+
+.code-year-badge:hover {
+  transform: translateY(-3px);
+}
+
+.code-glow {
+  animation: code-pulse 2s ease-in-out infinite;
+}
+
+.code-spin-slow {
+  animation: spin-gentle 8s linear infinite;
+}
+
+/* Code element text effects */
+.glow-text {
+  text-shadow: 0 0 2px currentColor;
+  transition: all 0.3s ease;
+}
+
+.glow-text:hover {
+  text-shadow: 0 0 8px currentColor;
+  transform: scale(1.05);
+}
+
+/* Code snippet animation */
+.code-icon {
+  transition: all 0.3s ease;
+}
+
+.code-icon-container {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.code-icon-container:after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.code-icon-container:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.code-icon-container:hover .code-icon {
+  color: #4f46e5;
+  transform: scale(1.1);
+}

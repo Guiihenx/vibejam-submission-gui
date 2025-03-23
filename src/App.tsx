@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Import the new CSS file which imports all others
+import "./styles/index.css";
+
 // Create a client with default settings
 const queryClient = new QueryClient({
   defaultOptions: {
