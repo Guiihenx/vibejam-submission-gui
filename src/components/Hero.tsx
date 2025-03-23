@@ -1,6 +1,5 @@
 
 import React, { useEffect, useRef } from 'react';
-import VibeButton from './VibeButton';
 import { Star, Sparkles, Code, Terminal, GitBranch } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -33,8 +32,6 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Removed World map */}
-        
         <div className="absolute top-20 left-10 transform rotate-12">
           <Star size={50} className="text-gray-200" />
         </div>
@@ -44,15 +41,10 @@ const Hero: React.FC = () => {
         <div className="absolute top-1/3 right-10 transform rotate-45">
           <Sparkles size={60} className="text-gray-200" />
         </div>
-
+        
         {/* Jet in right side, NO animation */}
         <div className="flying-element bottom-[20%] right-[15%]" style={{ opacity: "0.7" }}>
           <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
-        </div>
-        
-        {/* UFO kept in similar position */}
-        <div className="flying-element top-[70%] right-[8%] animate-bounce-light">
-          <img src="/lovable-uploads/ebb5d507-5505-4561-895b-9d616a67c6e1.png" alt="UFO doodle" />
         </div>
         
         {/* Enhanced code snippet illustration with pastel colors and smooth animation */}
@@ -95,7 +87,7 @@ const Hero: React.FC = () => {
           
           <h1 className="doodle-title-large mb-10 leading-tight tracking-tight">
             <Code className="w-8 h-8 inline-block mr-3 text-indigo-500" />
-            Vibe <span className="doodle-highlight-blue">Coding</span> Game Jam
+            Vibe <span className="doodle-highlight-hover">Coding</span> Game Jam
           </h1>
           
           <p className="doodle-text mb-12 max-w-3xl mx-auto leading-relaxed text-slate-700">
@@ -108,13 +100,11 @@ const Hero: React.FC = () => {
               href="http://jam.pieter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
+              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50 submit-button"
             >
               Submit Your Entry
               <Sparkles className="inline-block ml-2 w-5 h-5" />
             </a>
-            
-            <VibeButton />
           </div>
         </div>
       </div>

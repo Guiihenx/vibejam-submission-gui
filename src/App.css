@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -128,3 +127,239 @@
   animation: float-slow 6s ease-in-out infinite;
 }
 
+/* Enhanced highlight styles with hover effects */
+.doodle-highlight-hover {
+  @apply relative inline-block;
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-hover:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-blue-200 -z-10;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-hover:hover {
+  @apply text-blue-600;
+}
+
+.doodle-highlight-hover:hover:before {
+  content: '<';
+  @apply absolute -left-5 text-blue-400 opacity-0;
+  animation: slide-in 0.3s forwards;
+}
+
+.doodle-highlight-hover:hover:after {
+  @apply bg-blue-300;
+  height: 100%;
+  opacity: 0.3;
+  transform: rotate(0deg);
+}
+
+.doodle-highlight-green {
+  @apply relative inline-block;
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-green:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-green-200 -z-10;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-green:hover {
+  @apply text-green-600;
+}
+
+.doodle-highlight-green:hover:before {
+  content: '<';
+  @apply absolute -left-5 text-green-400 opacity-0;
+  animation: slide-in 0.3s forwards;
+}
+
+.doodle-highlight-green:hover:after {
+  @apply bg-green-300;
+  height: 100%;
+  opacity: 0.3;
+  transform: rotate(0deg);
+}
+
+.doodle-highlight-violet {
+  @apply relative inline-block;
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-violet:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-violet-200 -z-10;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-violet:hover {
+  @apply text-violet-600;
+}
+
+.doodle-highlight-violet:hover:before {
+  content: '<';
+  @apply absolute -left-5 text-violet-400 opacity-0;
+  animation: slide-in 0.3s forwards;
+}
+
+.doodle-highlight-violet:hover:after {
+  @apply bg-violet-300;
+  height: 100%;
+  opacity: 0.3;
+  transform: rotate(0deg);
+}
+
+.doodle-highlight-pink {
+  @apply relative inline-block;
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-pink:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-pink-200 -z-10;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.doodle-highlight-pink:hover {
+  @apply text-pink-600;
+}
+
+.doodle-highlight-pink:hover:before {
+  content: '<';
+  @apply absolute -left-5 text-pink-400 opacity-0;
+  animation: slide-in 0.3s forwards;
+}
+
+.doodle-highlight-pink:hover:after {
+  @apply bg-pink-300;
+  height: 100%;
+  opacity: 0.3;
+  transform: rotate(0deg);
+}
+
+/* Submit button gradient effect */
+.submit-button {
+  @apply bg-gradient-to-r from-violet-100 to-indigo-50 hover:from-violet-200 hover:to-indigo-100;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: all 0.6s ease;
+}
+
+.submit-button:hover:before {
+  left: 100%;
+}
+
+/* Vibejam tag effects */
+.vibejam-tag {
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #f9f9f9, #ffffff);
+}
+
+.vibejam-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background: linear-gradient(45deg, #f0f9ff, #ffffff);
+}
+
+.code-text {
+  transition: all 0.3s ease;
+}
+
+.vibejam-tag:hover .code-text {
+  background: linear-gradient(45deg, #3b82f6, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.code-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* FileCode icon container effects */
+.code-icon-container {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.code-icon-container:after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.code-icon-container:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.code-icon-container:hover .code-icon {
+  color: #4f46e5;
+  transform: scale(1.1);
+}
+
+.code-icon {
+  transition: all 0.3s ease;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(5px);
+    opacity: 0;
+  }
+}

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Code, GitBranch } from 'lucide-react';
+import { Code, GitBranch, FileCode } from 'lucide-react';
 import XLogo from './XLogo';
 
 type JuryMember = {
@@ -90,8 +90,8 @@ const JurySection: React.FC = () => {
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
         <div className="text-center mb-16">
           <h2 className="doodle-title-large mb-6">
-            <GitBranch className="w-8 h-8 inline-block mr-3 text-violet-500" />
-            Meet the <span className="doodle-highlight-blue">Jury</span>
+            <FileCode className="w-8 h-8 inline-block mr-3 text-violet-500" />
+            Meet the <span className="doodle-highlight-pink">Jury</span>
           </h2>
           <p className="doodle-text max-w-2xl mx-auto">
             Industry experts who will review and select the most innovative game submissions.

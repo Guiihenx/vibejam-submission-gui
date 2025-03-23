@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { PenLine, Code, ArrowRight } from 'lucide-react';
+import { Code, ArrowRight, FileCode } from 'lucide-react';
 
 const SubmitSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -68,11 +68,11 @@ const SubmitSection: React.FC = () => {
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
         <div className="doodle-card bg-opacity-100 max-w-4xl mx-auto border-4 border-black bg-gradient-to-b from-white to-blue-50">
           <div className="relative z-10 text-center">
-            <div className="w-20 h-20 mx-auto rounded-full border-2 border-black flex items-center justify-center mb-6 bg-white">
-              <PenLine className="w-10 h-10" />
+            <div className="w-20 h-20 mx-auto rounded-full border-2 border-black flex items-center justify-center mb-6 bg-white code-icon-container">
+              <FileCode className="w-10 h-10 text-indigo-600 code-icon" />
             </div>
             
-            <h2 className="doodle-title-large mb-8">Ready to Join <span className="doodle-highlight-blue">#vibejam</span>?</h2>
+            <h2 className="doodle-title-large mb-8">Ready to Join <span className="doodle-highlight-violet">#vibejam</span>?</h2>
             
             <p className="doodle-text mb-10 max-w-xl mx-auto text-slate-700">
               Submit your AI-powered game and showcase your innovative approach to game development.
@@ -82,7 +82,7 @@ const SubmitSection: React.FC = () => {
               href="http://jam.pieter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
+              className="submit-button doodle-button text-2xl group"
             >
               Submit Your Entry Now
               <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
