@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
-      {/* Decorative elements */}
+      {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 transform rotate-12">
           <Star size={50} className="text-gray-200" />
@@ -43,40 +43,44 @@ const Hero: React.FC = () => {
           <Sparkles size={60} className="text-gray-200" />
         </div>
         
-        {/* Earth in the background */}
-        <div className="absolute opacity-20 w-full h-full flex items-center justify-center pointer-events-none">
+        {/* Earth in the background - moved to the side */}
+        <div className="absolute top-1/4 right-0 opacity-15 pointer-events-none">
           <img 
             src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
             alt="World Map" 
-            className="w-[90vw] h-[90vw] max-w-[800px] max-h-[800px] animate-spin-slow"
+            className="w-[50vw] max-w-[500px] animate-float-element"
+            style={{ animationDelay: "2s" }}
           />
         </div>
 
-        {/* Flying illustrations */}
-        <div className="flying-element top-[20%] left-[5%] animate-float-element">
-          <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" />
+        {/* Flying illustrations - rearranged */}
+        {/* Moved Jet to bottom right */}
+        <div className="flying-element bottom-[10%] right-[10%] animate-float-element" style={{ animationDelay: "1s" }}>
+          <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
         </div>
         
+        {/* UFO kept in similar position, people like it */}
         <div className="flying-element top-[70%] right-[8%] animate-bounce-light">
           <img src="/lovable-uploads/ebb5d507-5505-4561-895b-9d616a67c6e1.png" alt="UFO doodle" />
         </div>
         
-        <div className="flying-element bottom-[25%] left-[15%] animate-bounce-light" style={{ animationDelay: "2s" }}>
+        {/* Moved balloon to top-left */}
+        <div className="flying-element top-[15%] left-[8%] animate-bounce-light" style={{ animationDelay: "2s" }}>
           <img src="/lovable-uploads/dcc16345-8a45-428b-9e44-9cca47208faa.png" alt="Balloon doodle" />
         </div>
       </div>
       
       <div ref={sectionRef} className="container mx-auto px-6 relative z-10 section-animate">
         <div className="text-center max-w-4xl mx-auto">
-          <span className="inline-block px-5 py-2 mb-8 text-xl font-handwritten border-2 border-black rounded-full bg-white">
-            2025
+          <span className="inline-block px-5 py-2 mb-8 text-xl font-handwritten border-2 border-black rounded-full bg-white shadow-md">
+            <span className="text-sky-400">2025</span>
           </span>
           
           <h1 className="doodle-title-large mb-10 leading-tight tracking-tight">
-            Vibe <span className="doodle-highlight">Coding</span> Game Jam
+            Vibe <span className="doodle-highlight-blue">Coding</span> Game Jam
           </h1>
           
-          <p className="doodle-text mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="doodle-text mb-12 max-w-3xl mx-auto leading-relaxed text-slate-700">
             The first game jam for AI vibecoded games.
             Create, innovate, and push boundaries.
           </p>
@@ -86,7 +90,7 @@ const Hero: React.FC = () => {
               href="http://jam.pieter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="doodle-button text-2xl group"
+              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
             >
               Submit Your Entry
               <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>

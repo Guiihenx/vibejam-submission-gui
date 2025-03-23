@@ -63,7 +63,7 @@
 }
 
 .doodle-button {
-  @apply relative bg-white border-2 border-black rounded-full px-8 py-3 font-handwritten text-xl md:text-2xl font-bold;
+  @apply relative bg-white border-2 border-black rounded-full px-8 py-3 font-handwritten text-xl md:text-2xl font-bold transition-all;
   box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
   transition: all 0.2s ease;
 }
@@ -101,6 +101,17 @@
 .doodle-highlight:after {
   content: '';
   @apply absolute bottom-0 left-0 w-full h-4 bg-yellow-200 -z-10;
+  transform: rotate(-1deg);
+}
+
+/* New blue highlight */
+.doodle-highlight-blue {
+  @apply relative inline-block;
+}
+
+.doodle-highlight-blue:after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-4 bg-sky-200 -z-10;
   transform: rotate(-1deg);
 }
 
@@ -216,4 +227,31 @@
   50% { transform: translate(0, -30px) rotate(0deg); }
   75% { transform: translate(-20px, -10px) rotate(-5deg); }
   100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* New pastel color gradients for backgrounds */
+.pastel-blue-gradient {
+  @apply bg-gradient-to-br from-blue-50 to-white;
+}
+
+.pastel-pink-gradient {
+  @apply bg-gradient-to-br from-pink-50 to-white;
+}
+
+.pastel-purple-gradient {
+  @apply bg-gradient-to-br from-purple-50 to-white;
+}
+
+.pastel-indigo-gradient {
+  @apply bg-gradient-to-br from-indigo-50 to-white;
+}
+
+/* Section transitions */
+.section-transition {
+  @apply relative;
+}
+
+.section-transition::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent;
 }

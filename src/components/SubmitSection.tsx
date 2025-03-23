@@ -30,7 +30,7 @@ const SubmitSection: React.FC = () => {
 
   return (
     <section className="py-24 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-white"></div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-sky-50"></div>
       
       {/* Ship illustration */}
       <div className="absolute bottom-10 left-10 z-0 opacity-15 pointer-events-none">
@@ -43,15 +43,15 @@ const SubmitSection: React.FC = () => {
       </div>
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
-        <div className="doodle-card bg-opacity-100 max-w-4xl mx-auto border-4 border-black">
+        <div className="doodle-card bg-opacity-100 max-w-4xl mx-auto border-4 border-black bg-gradient-to-b from-white to-blue-50">
           <div className="relative z-10 text-center">
             <div className="w-20 h-20 mx-auto rounded-full border-2 border-black flex items-center justify-center mb-6 bg-white">
               <PenLine className="w-10 h-10" />
             </div>
             
-            <h2 className="doodle-title-large mb-8">Ready to Join <span className="doodle-highlight">#vibejam</span>?</h2>
+            <h2 className="doodle-title-large mb-8">Ready to Join <span className="doodle-highlight-blue">#vibejam</span>?</h2>
             
-            <p className="doodle-text mb-10 max-w-xl mx-auto">
+            <p className="doodle-text mb-10 max-w-xl mx-auto text-slate-700">
               Submit your AI-powered game and showcase your innovative approach to game development.
             </p>
             
@@ -59,7 +59,7 @@ const SubmitSection: React.FC = () => {
               href="http://jam.pieter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="doodle-button text-2xl group"
+              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
             >
               Submit Your Entry Now
               <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
