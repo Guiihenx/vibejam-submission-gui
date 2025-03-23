@@ -1,29 +1,76 @@
 
-import React, { useState } from 'react';
-import { Pencil } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Pencil, Sparkles } from 'lucide-react';
 
 const VibeButton: React.FC = () => {
   const [isVibrating, setIsVibrating] = useState(false);
+  const [isGlowing, setIsGlowing] = useState(false);
   
   const handleVibrate = () => {
     setIsVibrating(true);
+    setIsGlowing(true);
     
-    // Reset after animation completes
+    // Create ripple effect with multiple circles
+    const button = document.querySelector('.vibe-button');
+    if (button) {
+      for (let i = 0; i < 3; i++) {
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple-effect');
+        ripple.style.animationDelay = `${i * 100}ms`;
+        button.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+          ripple.remove();
+        }, 1000);
+      }
+    }
+    
+    // Reset vibration after animation completes
     setTimeout(() => {
       setIsVibrating(false);
     }, 600);
+    
+    // Reset glow after slightly longer
+    setTimeout(() => {
+      setIsGlowing(false);
+    }, 1500);
   };
+  
+  useEffect(() => {
+    // Add sparkle animation
+    const interval = setInterval(() => {
+      const button = document.querySelector('.vibe-button');
+      if (button) {
+        const sparkle = document.createElement('span');
+        sparkle.classList.add('sparkle');
+        sparkle.style.left = `${Math.random() * 100}%`;
+        sparkle.style.top = `${Math.random() * 100}%`;
+        button.appendChild(sparkle);
+        
+        // Remove sparkle after animation
+        setTimeout(() => {
+          sparkle.remove();
+        }, 1000);
+      }
+    }, 2000);
+    
+    return () => clearInterval(interval);
+  }, []);
   
   return (
     <button
       onClick={handleVibrate}
-      className={`doodle-button inline-flex items-center justify-center gap-2 ${
+      className={`vibe-button doodle-button inline-flex items-center justify-center gap-2 relative overflow-hidden ${
         isVibrating ? 'animate-wiggle' : ''
+      } ${
+        isGlowing ? 'vibe-glow' : ''
       }`}
       aria-label="Click to vibrate"
     >
       <Pencil className="w-5 h-5" />
       <span>Feel the vibe</span>
+      <Sparkles className={`absolute top-0 right-0 w-6 h-6 text-yellow-400 transition-opacity ${isGlowing ? 'opacity-100' : 'opacity-0'}`} />
     </button>
   );
 };

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Twitter } from 'lucide-react';
+import { Twitter, Code } from 'lucide-react';
 
 type JuryMember = {
   handle: string;
@@ -66,18 +66,29 @@ const JurySection: React.FC = () => {
     <section id="jury" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
       
-      {/* Airplane illustration */}
-      <div className="absolute top-0 right-0 z-0 opacity-10 pointer-events-none">
-        <img 
-          src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" 
-          alt="Airplane doodle" 
-          className="w-40 md:w-60"
-        />
+      {/* Code snippet illustration for jury section */}
+      <div className="absolute top-20 left-20 z-0 opacity-80">
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-md">
+          <div className="flex items-center mb-2">
+            <Code size={18} className="mr-2" />
+            <span className="font-handwritten text-sm">jury.js</span>
+          </div>
+          <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
+            <code>
+{`async function evaluateGames() {
+  const entries = await fetchAll();
+  const jury = await assembleJury();
+  
+  return jury.scoreGames(entries);
+}`}
+            </code>
+          </pre>
+        </div>
       </div>
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
         <div className="text-center mb-16">
-          <h2 className="doodle-title-large mb-6">Meet the <span className="doodle-highlight">Jury</span></h2>
+          <h2 className="doodle-title-large mb-6">Meet the <span className="doodle-highlight-blue">Jury</span></h2>
           <p className="doodle-text max-w-2xl mx-auto">
             Industry experts who will review and select the most innovative game submissions.
           </p>

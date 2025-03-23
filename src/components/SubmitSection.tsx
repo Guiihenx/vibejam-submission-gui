@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { PenLine } from 'lucide-react';
+import { PenLine, Code } from 'lucide-react';
 
 const SubmitSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -40,6 +40,29 @@ const SubmitSection: React.FC = () => {
           className="w-32 md:w-40 animate-float-element"
           style={{ animationDelay: "1s" }}
         />
+      </div>
+      
+      {/* Code snippet for submit section */}
+      <div className="absolute top-20 right-20 z-0 opacity-80">
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md">
+          <div className="flex items-center mb-2">
+            <Code size={18} className="mr-2" />
+            <span className="font-handwritten text-sm">submit.js</span>
+          </div>
+          <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
+            <code>
+{`function submitGame(game) {
+  if (game.isVibeCoded) {
+    return api.submit({
+      title: game.title,
+      author: game.author,
+      url: game.playUrl
+    });
+  }
+}`}
+            </code>
+          </pre>
+        </div>
       </div>
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">

@@ -104,7 +104,7 @@
   transform: rotate(-1deg);
 }
 
-/* New blue highlight */
+/* Blue highlight */
 .doodle-highlight-blue {
   @apply relative inline-block;
 }
@@ -154,19 +154,68 @@
 .flying-element {
   @apply absolute z-0 transition-all duration-1000;
   opacity: 0.7;
-  filter: grayscale(100%);
-  transform-origin: center center;
 }
 
 .flying-element img {
   @apply w-auto h-auto max-h-40 md:max-h-60;
 }
 
+/* Removed hover effect filter changing that was making images darker */
 .flying-element:hover {
-  opacity: 1;
-  filter: grayscale(0%);
   transform: scale(1.1);
   z-index: 5;
+}
+
+/* New vibe button effects */
+.vibe-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.vibe-glow {
+  animation: vibe-pulse 1.5s ease-in-out;
+  box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.7), 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.ripple-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: rgba(59, 130, 246, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripple 1s ease-out forwards;
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 215, 0, 0.7);
+  border-radius: 50%;
+  filter: blur(1px);
+  pointer-events: none;
+  animation: sparkle-fade 1s ease-out forwards;
+}
+
+@keyframes vibe-pulse {
+  0% { box-shadow: 0 0 5px 0px rgba(59, 130, 246, 0.7), 3px 3px 0px 0px rgba(0,0,0,1); }
+  50% { box-shadow: 0 0 25px 8px rgba(59, 130, 246, 0.9), 3px 3px 0px 0px rgba(0,0,0,1); }
+  100% { box-shadow: 0 0 5px 0px rgba(59, 130, 246, 0.7), 3px 3px 0px 0px rgba(0,0,0,1); }
+}
+
+@keyframes ripple {
+  0% { width: 0px; height: 0px; opacity: 0.8; }
+  100% { width: 300px; height: 300px; opacity: 0; }
+}
+
+@keyframes sparkle-fade {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.5); opacity: 0.8; }
+  100% { transform: scale(0); opacity: 0; }
 }
 
 /* New styles for sponsors section */
@@ -229,7 +278,7 @@
   100% { transform: translate(0, 0) rotate(0deg); }
 }
 
-/* New pastel color gradients for backgrounds */
+/* Pastel color gradients for backgrounds */
 .pastel-blue-gradient {
   @apply bg-gradient-to-br from-blue-50 to-white;
 }
@@ -254,4 +303,14 @@
 .section-transition::after {
   content: '';
   @apply absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent;
+}
+
+/* Code snippets styling */
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+code {
+  font-family: 'Courier New', monospace;
 }

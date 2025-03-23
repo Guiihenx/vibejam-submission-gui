@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Zap } from 'lucide-react';
+import { Zap, Code } from 'lucide-react';
 
 const SponsorsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -30,8 +30,8 @@ const SponsorsSection: React.FC = () => {
 
   return (
     <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
-      {/* Decorative ship illustration */}
-      <div className="absolute bottom-0 right-0 z-0 opacity-10 pointer-events-none">
+      {/* Decorative ship illustration moved to left */}
+      <div className="absolute bottom-0 left-0 z-0 opacity-15 pointer-events-none">
         <img 
           src="/lovable-uploads/8553bec3-ce97-4fba-9542-9b5285e5a459.png" 
           alt="Ship doodle" 
@@ -39,9 +39,29 @@ const SponsorsSection: React.FC = () => {
         />
       </div>
       
+      {/* Code snippet illustration for sponsors section */}
+      <div className="absolute top-20 right-20 z-0 opacity-80">
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[3deg] shadow-md">
+          <div className="flex items-center mb-2">
+            <Code size={18} className="mr-2" />
+            <span className="font-handwritten text-sm">sponsor.js</span>
+          </div>
+          <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
+            <code>
+{`const sponsors = [
+  { name: "Bolt", tier: "Gold" },
+  { name: "CodeRabbit", tier: "Gold" }
+];
+
+sponsors.forEach(s => addBadge(s));`}
+            </code>
+          </pre>
+        </div>
+      </div>
+      
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
         <div className="text-center mb-12">
-          <h2 className="doodle-title-large mb-6">Powered by <span className="doodle-highlight">Amazing</span> Partners</h2>
+          <h2 className="doodle-title-large mb-6">Powered by <span className="doodle-highlight-blue">Amazing</span> Partners</h2>
           <p className="doodle-text mb-8 max-w-2xl mx-auto">
             Join forces with industry leaders pushing the boundaries of AI and game development
           </p>

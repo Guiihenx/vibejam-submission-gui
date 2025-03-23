@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import VibeButton from './VibeButton';
-import { Star, Sparkles, Zap } from 'lucide-react';
+import { Star, Sparkles, Zap, Code } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,6 +33,15 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
+        {/* World map moved above hero content, with rotation */}
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-15 pointer-events-none z-0">
+          <img 
+            src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
+            alt="World Map" 
+            className="w-[40vw] max-w-[400px] animate-spin-slow"
+          />
+        </div>
+        
         <div className="absolute top-20 left-10 transform rotate-12">
           <Star size={50} className="text-gray-200" />
         </div>
@@ -42,19 +51,9 @@ const Hero: React.FC = () => {
         <div className="absolute top-1/3 right-10 transform rotate-45">
           <Sparkles size={60} className="text-gray-200" />
         </div>
-        
-        {/* Earth in the background - moved to the side */}
-        <div className="absolute top-1/4 right-0 opacity-15 pointer-events-none">
-          <img 
-            src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
-            alt="World Map" 
-            className="w-[50vw] max-w-[500px] animate-float-element"
-            style={{ animationDelay: "2s" }}
-          />
-        </div>
 
         {/* Flying illustrations - rearranged */}
-        {/* Moved Jet to bottom right */}
+        {/* Kept Jet in bottom right */}
         <div className="flying-element bottom-[10%] right-[10%] animate-float-element" style={{ animationDelay: "1s" }}>
           <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
         </div>
@@ -64,9 +63,24 @@ const Hero: React.FC = () => {
           <img src="/lovable-uploads/ebb5d507-5505-4561-895b-9d616a67c6e1.png" alt="UFO doodle" />
         </div>
         
-        {/* Moved balloon to top-left */}
-        <div className="flying-element top-[15%] left-[8%] animate-bounce-light" style={{ animationDelay: "2s" }}>
-          <img src="/lovable-uploads/dcc16345-8a45-428b-9e44-9cca47208faa.png" alt="Balloon doodle" />
+        {/* Code snippet illustration */}
+        <div className="absolute bottom-[20%] left-[10%] z-0 opacity-80">
+          <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-5deg] shadow-md">
+            <div className="flex items-center mb-2">
+              <Code size={18} className="mr-2" />
+              <span className="font-handwritten text-sm">game.js</span>
+            </div>
+            <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
+              <code>
+{`function vibeCode() {
+  const game = new Game();
+  game.createWorld();
+  game.addPlayer();
+  return game.start();
+}`}
+              </code>
+            </pre>
+          </div>
         </div>
       </div>
       
