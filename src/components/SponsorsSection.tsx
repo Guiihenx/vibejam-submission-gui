@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { Zap } from 'lucide-react';
 
 const SponsorsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -28,46 +29,45 @@ const SponsorsSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="sponsors" className="py-24 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
-      
+    <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
-        <div className="text-center mb-16">
-          <h2 className="doodle-title mb-4">Our <span className="doodle-highlight">Sponsors</span></h2>
-          <p className="font-handwritten text-lg max-w-2xl mx-auto">
-            Meet the organizations making this game jam possible.
-          </p>
+        <div className="text-center mb-12">
+          <h2 className="doodle-title-large mb-4">Powered by <span className="doodle-highlight">Amazing</span> Partners</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-          <div className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-2">
-            <div className="w-40 h-40 mb-6 overflow-hidden flex items-center justify-center">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12 max-w-4xl mx-auto">
+          <div className="sponsor-card">
+            <div className="w-48 h-48 mb-6 flex items-center justify-center">
               <img 
                 src="/lovable-uploads/5aaf8198-22eb-40ad-83e4-16ede5847963.png" 
                 alt="Bolt logo" 
-                className="w-32 object-contain"
+                className="w-40 object-contain"
               />
             </div>
             
-            <h3 className="doodle-title text-xl mb-2">Bolt</h3>
-            <p className="font-handwritten text-vibejam-blue mb-4">@boltdotnew</p>
-            <p className="font-handwritten">
+            <h3 className="doodle-title-medium mb-2">Bolt</h3>
+            <p className="font-handwritten text-xl text-vibejam-blue mb-4">@boltdotnew</p>
+            <p className="font-handwritten text-lg">
               Powering the future of development
             </p>
           </div>
           
-          <div className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-2">
-            <div className="w-40 h-40 mb-6 overflow-hidden flex items-center justify-center">
+          <div className="sponsor-divider">
+            <Zap className="w-8 h-8 text-black" />
+          </div>
+          
+          <div className="sponsor-card">
+            <div className="w-48 h-48 mb-6 flex items-center justify-center">
               <img 
-                src="/lovable-uploads/0351d2a6-1c7a-4d6d-b288-f1c9034e4969.png" 
+                src="/lovable-uploads/83ec83f8-5813-42dc-a04f-10f85538b807.png" 
                 alt="Code Rabbit logo" 
-                className="w-32 object-contain"
+                className="w-40 h-40 object-contain"
               />
             </div>
             
-            <h3 className="doodle-title text-xl mb-2">Code Rabbit</h3>
-            <p className="font-handwritten text-vibejam-blue mb-4">@coderabbitai</p>
-            <p className="font-handwritten">
+            <h3 className="doodle-title-medium mb-2">Code Rabbit</h3>
+            <p className="font-handwritten text-xl text-vibejam-blue mb-4">@coderabbitai</p>
+            <p className="font-handwritten text-lg">
               AI-powered development assistant
             </p>
           </div>

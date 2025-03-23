@@ -2,9 +2,9 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import SponsorsSection from '@/components/SponsorsSection';
 import AboutSection from '@/components/AboutSection';
 import JurySection from '@/components/JurySection';
-import SponsorsSection from '@/components/SponsorsSection';
 import SubmitSection from '@/components/SubmitSection';
 import Footer from '@/components/Footer';
 
@@ -33,9 +33,9 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <Hero />
+      <SponsorsSection />
       <AboutSection />
       <JurySection />
-      <SponsorsSection />
       <SubmitSection />
       <Footer />
     </div>
