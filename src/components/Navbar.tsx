@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { CodeSquare, Joystick, Sparkles } from 'lucide-react';
+import { CodeSquare, Joystick, Sparkles, Code, GamepadIcon, Terminal, PuzzleIcon, Cpu, Braces } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Navbar: React.FC = () => {
@@ -37,9 +37,18 @@ const Navbar: React.FC = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600">About</a>
-          <a href="#jury" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600">Jury</a>
-          <a href="#sponsors" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600">Sponsors</a>
+          <a href="#about" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600 flex items-center">
+            <Code className="w-4 h-4 mr-1.5 text-indigo-500" />
+            <span>About</span>
+          </a>
+          <a href="#jury" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600 flex items-center">
+            <Cpu className="w-4 h-4 mr-1.5 text-violet-500" />
+            <span>Jury</span>
+          </a>
+          <a href="#sponsors" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600 flex items-center">
+            <Braces className="w-4 h-4 mr-1.5 text-green-500" />
+            <span>Sponsors</span>
+          </a>
           <Button 
             asChild
             variant="submit"
@@ -51,8 +60,9 @@ const Navbar: React.FC = () => {
               target="_blank" 
               rel="noopener noreferrer"
             >
+              <GamepadIcon className="w-4 h-4 mr-1.5" />
               <span>Submit Entry</span>
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-4 h-4 ml-1.5" />
             </a>
           </Button>
         </nav>

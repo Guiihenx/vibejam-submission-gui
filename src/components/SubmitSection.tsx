@@ -1,8 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
-import { CodeSquare, FileCode, Sparkles, Code, CalendarClock, AlertTriangle } from 'lucide-react';
+import { CodeSquare, FileCode, Sparkles, Code } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 const SubmitSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -95,22 +94,6 @@ const SubmitSection: React.FC = () => {
                 <CodeSquare className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
               </a>
             </Button>
-            
-            {/* Deadline button with warning sign */}
-            <div className="mt-8 inline-block">
-              <div className="code-deadline-badge bg-amber-50 border-2 border-black rounded-md px-5 py-3 shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 group font-terminal">
-                <div className="flex items-center justify-center gap-3">
-                  <AlertTriangle className="text-amber-500 w-5 h-5 animate-pulse group-hover:text-red-500 transition-all duration-300" />
-                  <div className="flex items-center gap-2">
-                    <CalendarClock className="text-indigo-500 w-5 h-5" />
-                    <code className="text-lg bg-gradient-to-r from-indigo-600 to-rose-600 bg-clip-text text-transparent">
-                      <span className="terminal-highlight">Game deadline: 1 April 2025</span>
-                    </code>
-                  </div>
-                  <AlertTriangle className="text-amber-500 w-5 h-5 animate-pulse group-hover:text-red-500 transition-all duration-300" />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
+
 import React, { useEffect, useRef } from 'react';
-import { Star, Sparkles, Code, Terminal, GamepadIcon, Joystick, TerminalSquare, CodeSquare, Bug, Braces, MonitorPlay, GitCompare, FileCode } from 'lucide-react';
+import { Star, Sparkles, Code, Terminal, GamepadIcon, Joystick, TerminalSquare, CodeSquare, Bug, Braces, MonitorPlay, GitCompare, FileCode, CalendarClock, AlertTriangle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Hero: React.FC = () => {
@@ -51,8 +52,8 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      {/* Rocket illustration - REPOSITIONED more to the right and BIGGER */}
-      <div className="absolute bottom-40 right-[30%] z-10 w-48 h-48 md:w-64 md:h-64 animate-rocket">
+      {/* Rocket illustration - REPOSITIONED further to the right */}
+      <div className="absolute bottom-40 right-[10%] z-10 w-48 h-48 md:w-64 md:h-64 animate-rocket">
         <img 
           src="/lovable-uploads/8e247c81-02ed-4e0b-92fd-109966cb082c.png" 
           alt="Rocket" 
@@ -178,13 +179,24 @@ const Hero: React.FC = () => {
             Create, innovate, and push boundaries.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-8">
             <Button asChild variant="submit" size="lg" className="py-6 px-10 text-xl font-terminal group">
               <a href="http://jam.pieter.com" target="_blank" rel="noopener noreferrer">
                 Submit Your Entry
                 <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
               </a>
             </Button>
+          </div>
+          
+          {/* NEW SLEEK DEADLINE BADGE */}
+          <div className="inline-block deadline-badge transform transition-all duration-300 hover:-translate-y-1 hover:scale-105">
+            <div className="flex items-center gap-2 bg-white border-2 border-black rounded-md px-4 py-2 shadow-md font-terminal text-lg">
+              <AlertTriangle className="text-amber-500 w-5 h-5" />
+              <CalendarClock className="text-indigo-500 w-5 h-5 mr-1" />
+              <span className="bg-gradient-to-r from-indigo-600 to-rose-600 bg-clip-text text-transparent font-semibold">
+                Game deadline: 1 April 2025
+              </span>
+            </div>
           </div>
         </div>
       </div>
