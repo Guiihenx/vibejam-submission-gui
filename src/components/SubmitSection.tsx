@@ -44,7 +44,7 @@ const SubmitSection: React.FC = () => {
       </div>
       
       {/* Code snippet for submit section with animation and pastel colors - REPOSITIONED */}
-      <div className="absolute top-[40%] right-20 z-0 opacity-80 code-snippet-card animate-float-slow">
+      <div className="absolute top-[20%] right-20 z-0 opacity-80 code-snippet-card animate-float-slow">
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-[3deg]" style={{ maxWidth: "240px" }}>
           <div className="flex items-center mb-2">
             <Code size={16} className="mr-2" />
@@ -73,7 +73,7 @@ const SubmitSection: React.FC = () => {
               <FileCode className="w-10 h-10 text-indigo-600 code-icon group-hover:text-violet-600 transition-all duration-300 group-hover:scale-110" />
             </div>
             
-            <h2 className="font-terminal font-bold text-4xl md:text-5xl mb-8">Ready to Join <span className="doodle-highlight-violet">#vibejam</span>?</h2>
+            <h2 className="font-terminal font-bold text-4xl md:text-5xl mb-8">Ready to Join <span className="terminal-highlight">#vibejam</span>?</h2>
             
             <p className="font-terminal text-xl mb-10 max-w-xl mx-auto text-slate-700">
               Submit your AI-powered game and showcase your innovative approach to game development.

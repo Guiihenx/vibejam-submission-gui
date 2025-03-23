@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Star, Sparkles, Code, Terminal, GitBranch, GamepadIcon, Joystick, TerminalSquare, CodeSquare, FileCode, Bug } from 'lucide-react';
+import { Star, Sparkles, Code, Terminal, GamepadIcon, Joystick, TerminalSquare, CodeSquare, Bug } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Hero: React.FC = () => {
@@ -30,6 +30,15 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
+      {/* Gamepad image at the top of the header */}
+      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-24 h-24 md:w-32 md:h-32 z-10">
+        <img 
+          src="/lovable-uploads/6d7b34d6-8249-474e-815c-1617ef200298.png" 
+          alt="Gamepad" 
+          className="w-full h-full object-contain animate-float"
+        />
+      </div>
+      
       {/* Decorative elements - game and code related */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating code and game icons with pastel colors */}
@@ -59,7 +68,7 @@ const Hero: React.FC = () => {
         </div>
         
         {/* Enhanced code snippet illustration with improved hover effects - repositioned */}
-        <div className="absolute bottom-[15%] left-[8%] z-0 opacity-90 code-snippet-card animate-float-slow">
+        <div className="absolute bottom-[30%] left-[8%] z-0 opacity-90 code-snippet-card animate-float-slow">
           <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-[-3deg]" style={{
             maxWidth: "280px"
           }}>
@@ -100,7 +109,7 @@ const Hero: React.FC = () => {
           
           <h1 className="font-terminal font-bold mb-10 leading-tight tracking-tight text-4xl md:text-6xl">
             <Code className="w-8 h-8 inline-block mr-3 text-indigo-500" />
-            Vibe <span className="doodle-highlight-hover">Coding</span> Game Jam
+            Vibe <span className="terminal-highlight">Game Jam</span>
           </h1>
           
           <p className="font-terminal text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-slate-700">
