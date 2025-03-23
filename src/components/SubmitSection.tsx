@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Code, ArrowRight, FileCode, Sparkles } from 'lucide-react';
+import { CodeSquare, FileCode, Sparkles, Code } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const SubmitSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -44,12 +45,12 @@ const SubmitSection: React.FC = () => {
       
       {/* Code snippet for submit section with animation and pastel colors - REPOSITIONED */}
       <div className="absolute top-[40%] right-20 z-0 opacity-80 code-snippet-card animate-float-slow">
-        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2" style={{ maxWidth: "240px" }}>
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-[3deg]" style={{ maxWidth: "240px" }}>
           <div className="flex items-center mb-2">
             <Code size={16} className="mr-2" />
-            <span className="font-handwritten text-xs">submit.js</span>
+            <span className="font-mono text-xs">submit.js</span>
           </div>
-          <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
+          <pre className="text-left text-xs font-mono bg-gradient-to-br from-indigo-50 to-white p-2 rounded">
             <code>
 {`function <span class="text-indigo-500">submitGame</span>(game) {
   if (<span class="text-pink-400">game.isVibeCoded</span>) {
@@ -72,21 +73,27 @@ const SubmitSection: React.FC = () => {
               <FileCode className="w-10 h-10 text-indigo-600 code-icon group-hover:text-violet-600 transition-all duration-300 group-hover:scale-110" />
             </div>
             
-            <h2 className="doodle-title-large mb-8">Ready to Join <span className="doodle-highlight-violet">#vibejam</span>?</h2>
+            <h2 className="font-mono font-bold text-4xl md:text-5xl mb-8">Ready to Join <span className="doodle-highlight-violet">#vibejam</span>?</h2>
             
-            <p className="doodle-text mb-10 max-w-xl mx-auto text-slate-700">
+            <p className="font-mono text-xl mb-10 max-w-xl mx-auto text-slate-700">
               Submit your AI-powered game and showcase your innovative approach to game development.
             </p>
             
-            <a 
-              href="http://jam.pieter.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="enhanced-submit-button group"
+            <Button 
+              asChild
+              variant="submit"
+              size="lg"
+              className="py-6 px-10 text-xl font-mono group"
             >
-              Submit Your Entry Now
-              <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
-            </a>
+              <a 
+                href="http://jam.pieter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Submit Your Entry Now
+                <CodeSquare className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>

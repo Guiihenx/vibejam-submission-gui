@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -22,6 +23,8 @@ export default {
 				sans: ['Quicksand', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
 				handwritten: ['Architects Daughter', 'cursive'],
 				display: ['Architects Daughter', 'cursive'],
+				mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+				code: ['JetBrains Mono', 'Fira Code', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

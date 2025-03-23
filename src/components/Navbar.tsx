@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Pencil, Send, Sparkles } from 'lucide-react';
+import { CodeSquare, Joystick, Sparkles } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -30,24 +31,30 @@ const Navbar: React.FC = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="font-display text-xl md:text-2xl flex items-center">
-          <Pencil className="w-5 h-5 mr-2" />
+        <div className="font-mono text-xl md:text-2xl flex items-center">
+          <Joystick className="w-5 h-5 mr-2 text-indigo-600" />
           <span className="doodle-highlight">#vibejam</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="font-handwritten text-lg hover:underline transition-all duration-300">About</a>
-          <a href="#jury" className="font-handwritten text-lg hover:underline transition-all duration-300">Jury</a>
-          <a href="#sponsors" className="font-handwritten text-lg hover:underline transition-all duration-300">Sponsors</a>
-          <a 
-            href="http://jam.pieter.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="nav-submit-button group"
+          <a href="#about" className="font-mono text-lg hover:underline transition-all duration-300 hover:text-indigo-600">About</a>
+          <a href="#jury" className="font-mono text-lg hover:underline transition-all duration-300 hover:text-indigo-600">Jury</a>
+          <a href="#sponsors" className="font-mono text-lg hover:underline transition-all duration-300 hover:text-indigo-600">Sponsors</a>
+          <Button 
+            asChild
+            variant="submit"
+            size="sm"
+            className="px-4 py-2 text-sm font-mono"
           >
-            <span>Submit Entry</span>
-            <Sparkles className="w-4 h-4 inline-block ml-1 group-hover:animate-pulse-light" />
-          </a>
+            <a 
+              href="http://jam.pieter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <span>Submit Entry</span>
+              <Sparkles className="w-4 h-4" />
+            </a>
+          </Button>
         </nav>
         
         <button className="md:hidden text-vibejam-dark-gray">
