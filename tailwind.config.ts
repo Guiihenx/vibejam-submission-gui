@@ -19,9 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
-				handwritten: ['Caveat', 'cursive'],
-				display: ['Indie Flower', 'cursive'],
+				sans: ['Quicksand', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+				handwritten: ['Architects Daughter', 'cursive'],
+				display: ['Architects Daughter', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -131,6 +131,25 @@ export default {
 					'0%': { backgroundPosition: '0% 50%' },
 					'50%': { backgroundPosition: '100% 50%' },
 					'100%': { backgroundPosition: '0% 50%' }
+				},
+				'float-element': {
+					'0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+					'25%': { transform: 'translateY(-15px) rotate(2deg)' },
+					'75%': { transform: 'translateY(5px) rotate(-2deg)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'bounce-light': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-15px)' }
+				},
+				'squiggle': {
+					'0%': { transform: 'translateX(0)' },
+					'25%': { transform: 'translateX(5px)' },
+					'75%': { transform: 'translateX(-5px)' },
+					'100%': { transform: 'translateX(0)' }
 				}
 			},
 			animation: {
@@ -145,7 +164,11 @@ export default {
 				'vibrate': 'vibrate 0.3s linear',
 				'vibrate-hover': 'vibrate 0.5s linear',
 				'scale-up': 'scale-up 0.3s ease-out forwards',
-				'gradient-move': 'gradient-move 3s ease infinite'
+				'gradient-move': 'gradient-move 3s ease infinite',
+				'float-element': 'float-element 8s ease-in-out infinite',
+				'spin-slow': 'spin-slow 20s linear infinite',
+				'bounce-light': 'bounce-light 4s ease-in-out infinite',
+				'squiggle': 'squiggle 2s ease-in-out infinite'
 			},
 			backdropFilter: {
 				'none': 'none',
