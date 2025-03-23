@@ -1,0 +1,76 @@
+
+.vibe-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.vibe-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.25), 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.vibe-glow {
+  animation: vibe-pulse 1.5s ease-in-out;
+  box-shadow: 0 0 25px 10px rgba(59, 130, 246, 0.5), 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.starburst-particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 5;
+  animation: starburst 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.wave-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: 2px solid rgba(59, 130, 246, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: wave-ripple 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.code-snippet-card {
+  animation: float-subtle 8s ease-in-out infinite;
+  transition: all 0.3s ease;
+  z-index: 0;
+  max-width: 280px;
+}
+
+.code-snippet-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  z-index: 5;
+}
+
+.code-snippet-card code span {
+  display: inline-block;
+  animation: color-pulse 3s ease-in-out infinite;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+pre, code {
+  position: relative;
+}
+
+pre code {
+  overflow: hidden;
+}
