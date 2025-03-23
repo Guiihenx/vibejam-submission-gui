@@ -1,53 +1,37 @@
-
 import React, { useEffect, useRef } from 'react';
 import { PenTool, Gamepad2, Sparkles, Terminal, Braces } from 'lucide-react';
-
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
-  return (
-    <section id="about" className="py-24 px-6 relative overflow-hidden">
+  return <section id="about" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-white"></div>
       
       {/* UFO illustration in bottom left */}
       <div className="absolute bottom-10 left-10 z-10 w-28 md:w-40 xl:w-48 animate-ufo">
-        <img 
-          src="/lovable-uploads/288acc21-d9f3-46c3-a12d-7dd58be7e2f5.png" 
-          alt="UFO" 
-          className="w-full h-auto hover:scale-110 transition-all duration-700"
-        />
+        <img src="/lovable-uploads/288acc21-d9f3-46c3-a12d-7dd58be7e2f5.png" alt="UFO" className="w-full h-auto hover:scale-110 transition-all duration-700" />
       </div>
       
       {/* Flying balloon decoration */}
       <div className="flying-doodle top-20 right-10">
-        <img 
-          src="/lovable-uploads/dcc16345-8a45-428b-9e44-9cca47208faa.png" 
-          alt="Balloon illustration" 
-          className="w-20 md:w-32 opacity-20"
-        />
+        
       </div>
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
@@ -104,8 +88,6 @@ const AboutSection: React.FC = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
