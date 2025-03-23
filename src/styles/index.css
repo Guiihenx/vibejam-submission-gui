@@ -1,8 +1,10 @@
 
-/* Import all the CSS files */
-@import './base.css';
-@import './code.css';
-@import './buttons.css';
+/* Import tailwind first */
+@import './tailwind.css';
+
+/* Import all other CSS files */
+@import './base-layout.css';
 @import './highlights.css';
-@import './animations.css';
+@import './buttons.css';
 @import './components.css';
+@import './animations.css';

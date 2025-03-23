@@ -1,68 +1,7 @@
 
-/* Component-specific styles */
-.starburst-particle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 5;
-  animation: starburst 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-
-.wave-ripple {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  background: transparent;
-  border: 2px solid rgba(59, 130, 246, 0.6);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: wave-ripple 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-
-.code-snippet-card {
-  animation: float-subtle 8s ease-in-out infinite;
-  transition: all 0.3s ease;
-  z-index: 0;
-  max-width: 280px;
-}
-
-.code-snippet-card:hover {
-  transform: translateY(-5px) scale(1.05);
-  z-index: 5;
-}
-
-.code-snippet-card code span {
-  display: inline-block;
-  animation: color-pulse 3s ease-in-out infinite;
-}
-
-/* Vibejam tag effects */
-.vibejam-tag {
-  transition: all 0.3s ease;
-  background: linear-gradient(45deg, #f9f9f9, #ffffff);
-}
-
-.vibejam-tag:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  background: linear-gradient(45deg, #f0f9ff, #ffffff);
-}
-
-.code-text {
-  transition: all 0.3s ease;
-}
-
-.vibejam-tag:hover .code-text {
-  background: linear-gradient(45deg, #3b82f6, #6366f1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.doodle-card {
+  @apply relative bg-white border-2 border-black rounded-lg p-6;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 }
 
 .sponsor-card {
@@ -147,21 +86,6 @@
   opacity: 0.7;
 }
 
-/* Simplified vibejam tag with sleeker design */
-.vibejam-code-text {
-  @apply relative inline-block transition-all duration-300;
-  background: linear-gradient(to right, transparent, transparent);
-  background-size: 100% 0%;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-}
-
-.group:hover .vibejam-code-text {
-  color: #4f46e5;
-  background-image: linear-gradient(to right, #818cf8, #6366f1);
-  background-size: 100% 3px;
-}
-
 .section-transition {
   @apply relative;
 }
@@ -189,6 +113,7 @@ pre code {
   overflow: hidden;
 }
 
+/* UI Gradients */
 .pastel-blue-gradient {
   @apply bg-gradient-to-br from-blue-50 to-white;
 }
@@ -205,23 +130,54 @@ pre code {
   @apply bg-gradient-to-br from-indigo-50 to-white;
 }
 
-.doodle-card {
-  @apply relative bg-white border-2 border-black rounded-lg p-6;
-  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+/* Code specific */
+.code-snippet-card {
+  animation: float-subtle 8s ease-in-out infinite;
+  transition: all 0.3s ease;
+  z-index: 0;
+  max-width: 280px;
 }
 
-.doodle-button {
-  @apply relative bg-white border-2 border-black rounded-full px-8 py-3 font-terminal text-xl md:text-2xl font-bold transition-all;
-  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
-  transition: all 0.2s ease;
+.code-snippet-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  z-index: 5;
 }
 
-.doodle-button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+.code-snippet-card code span {
+  display: inline-block;
+  animation: color-pulse 3s ease-in-out infinite;
 }
 
-.doodle-button:active {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0px 0px rgba(0,0,0,1);
+/* Code icon effects */
+.code-icon {
+  transition: all 0.3s ease;
+}
+
+.code-icon-container {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.code-icon-container:after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.code-icon-container:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.code-icon-container:hover .code-icon {
+  color: #4f46e5;
+  transform: scale(1.1);
 }
