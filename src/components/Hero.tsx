@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Star, Sparkles, Code, Terminal, GamepadIcon, Joystick, TerminalSquare, CodeSquare, Bug } from 'lucide-react';
+import { Star, Sparkles, Code, Terminal, GamepadIcon, Joystick, TerminalSquare, CodeSquare, Bug, Braces, MonitorPlay, GitCompare, FileCode } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Hero: React.FC = () => {
@@ -30,16 +30,30 @@ const Hero: React.FC = () => {
 
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Gamepad image at the top of the header - BIGGER SIZE */}
-      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-32 h-32 md:w-56 md:h-56 z-10">
+      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-40 h-40 md:w-64 md:h-64 z-10">
         <img 
           src="/lovable-uploads/3d2f00ca-8048-4211-98aa-fd3b609f94c9.png" 
           alt="Gamepad" 
           className="w-full h-full object-contain animate-float"
         />
+        
+        {/* Code icons around the controller */}
+        <div className="absolute -top-8 -left-8 animate-float-element" style={{ animationDelay: "1.2s" }}>
+          <Braces size={32} className="text-indigo-300" />
+        </div>
+        <div className="absolute top-0 -right-8 animate-float-element" style={{ animationDelay: "2.1s" }}>
+          <CodeSquare size={30} className="text-green-300" />
+        </div>
+        <div className="absolute -bottom-4 -left-10 animate-float-element" style={{ animationDelay: "1.5s" }}>
+          <Terminal size={28} className="text-blue-300" />
+        </div>
+        <div className="absolute -bottom-8 right-0 animate-float-element" style={{ animationDelay: "2.7s" }}>
+          <FileCode size={32} className="text-purple-300" />
+        </div>
       </div>
       
       {/* Rocket illustration in bottom right - REPOSITIONED and BIGGER */}
-      <div className="absolute bottom-32 right-1/3 z-10 w-32 h-32 md:w-48 md:h-48 animate-rocket">
+      <div className="absolute bottom-40 right-1/2 z-10 w-40 h-40 md:w-56 md:h-56 animate-rocket">
         <img 
           src="/lovable-uploads/8e247c81-02ed-4e0b-92fd-109966cb082c.png" 
           alt="Rocket" 
@@ -105,6 +119,32 @@ const Hero: React.FC = () => {
   <span class="text-green-500 glow-text">game</span>.createWorld();
   <span class="text-green-500 glow-text">game</span>.addPlayer();
   return <span class="text-indigo-500 glow-text">game</span>.<span class="text-purple-500 glow-text">start</span>();
+}`}
+              </code>
+            </pre>
+          </div>
+        </div>
+        
+        {/* New code snippet for the right side of Hero section */}
+        <div className="absolute top-[35%] right-[8%] z-0 opacity-90 code-snippet-card animate-float-slow" style={{animationDelay: "1.5s"}}>
+          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[3deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-[1deg]" style={{
+          maxWidth: "280px"
+        }}>
+            <div className="flex items-center mb-1 bg-gradient-to-r from-pink-50 to-purple-50 p-2 rounded-t border-b border-gray-200">
+              <Terminal size={16} className="mr-2 text-pink-500 animate-pulse-light" />
+              <span className="font-terminal text-xs text-purple-700">ai.js</span>
+            </div>
+            <pre className="text-left text-xs font-terminal bg-gradient-to-br from-pink-50 via-purple-50 to-white p-3 rounded">
+              <code className="code-highlight">
+              {`class <span class="text-blue-500 glow-text">AIController</span> {
+  constructor() {
+    this.<span class="text-pink-500 glow-text">model</span> = loadModel();
+    this.<span class="text-green-500 glow-text">learning</span> = true;
+  }
+  
+  <span class="text-purple-500 glow-text">predict</span>(input) {
+    return this.<span class="text-pink-500 glow-text">model</span>.run(input);
+  }
 }`}
               </code>
             </pre>

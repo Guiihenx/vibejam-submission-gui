@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Zap, Code, FileCode } from 'lucide-react';
 import XLogo from './XLogo';
@@ -30,6 +31,15 @@ const SponsorsSection: React.FC = () => {
 
   return (
     <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
+      {/* Hot air balloon on the left side */}
+      <div className="absolute top-40 left-20 z-10 w-40 md:w-52 xl:w-56 animate-float">
+        <img 
+          src="/lovable-uploads/096fe698-e386-40f8-a0de-26234e9a7934.png" 
+          alt="Hot Air Balloon" 
+          className="w-full h-auto transform hover:scale-110 transition-all duration-700"
+        />
+      </div>
+      
       {/* Enhanced code snippet illustration for sponsors section */}
       <div className="absolute top-40 right-20 z-0 opacity-90 code-snippet-card animate-float-slow">
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[3deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">

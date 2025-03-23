@@ -73,8 +73,8 @@ const JurySection: React.FC = () => {
     <section id="jury" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
       
-      {/* Airplane decoration on the right side */}
-      <div className="absolute top-1/4 right-0 z-10 w-32 md:w-48 xl:w-56 animate-plane">
+      {/* Airplane decoration - MADE BIGGER and REPOSITIONED */}
+      <div className="absolute top-1/3 right-[10%] z-10 w-40 md:w-56 xl:w-64 animate-plane">
         <img 
           src="/lovable-uploads/3bda189a-ea9f-43b3-8140-3af1c8ae92cb.png" 
           alt="Airplane" 
