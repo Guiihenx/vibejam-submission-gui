@@ -31,18 +31,19 @@ const SponsorsSection: React.FC = () => {
 
   return (
     <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
-      {/* Decorative ship illustration moved to left */}
-      <div className="absolute bottom-0 left-0 z-0 opacity-15 pointer-events-none">
+      {/* Decorative ship illustration with enhanced float animation */}
+      <div className="absolute bottom-0 left-0 z-0 pointer-events-none animate-float-element">
         <img 
           src="/lovable-uploads/8553bec3-ce97-4fba-9542-9b5285e5a459.png" 
           alt="Ship doodle" 
           className="w-64 md:w-80"
+          style={{ opacity: "0.15" }}
         />
       </div>
       
       {/* Enhanced code snippet illustration for sponsors section */}
       <div className="absolute top-40 right-20 z-0 opacity-90 code-snippet-card animate-float-slow">
-        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[3deg] shadow-lg hover:shadow-xl transition-all duration-500">
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[3deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
           <div className="flex items-center mb-2 bg-gradient-to-r from-green-50 to-blue-50 p-2 rounded-t border-b border-gray-200">
             <Code size={18} className="mr-2 text-green-500 animate-pulse-light" />
             <span className="font-handwritten text-sm text-blue-700">sponsor.js</span>

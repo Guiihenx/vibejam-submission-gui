@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Pencil, Send } from 'lucide-react';
+import { Pencil, Send, Sparkles } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,10 +43,10 @@ const Navbar: React.FC = () => {
             href="http://jam.pieter.com" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="doodle-button group"
+            className="nav-submit-button group"
           >
             <span>Submit Entry</span>
-            <Send className="w-4 h-4 inline-block ml-1 group-hover:translate-x-1 transition-transform" />
+            <Sparkles className="w-4 h-4 inline-block ml-1 group-hover:animate-pulse-light" />
           </a>
         </nav>
         

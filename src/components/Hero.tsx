@@ -42,14 +42,14 @@ const Hero: React.FC = () => {
           <Sparkles size={60} className="text-gray-200" />
         </div>
         
-        {/* Jet in right side, NO animation */}
-        <div className="flying-element bottom-[20%] right-[15%]" style={{ opacity: "0.7" }}>
+        {/* Jet in right side, animation added */}
+        <div className="flying-element bottom-[20%] right-[15%] animate-float-element" style={{ opacity: "0.7" }}>
           <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
         </div>
         
         {/* Enhanced code snippet illustration with pastel colors and smooth animation */}
         <div className="absolute bottom-[15%] left-[8%] z-0 opacity-90 code-snippet-card animate-float-slow">
-          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-lg hover:shadow-xl transition-all duration-500" style={{ maxWidth: "280px" }}>
+          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2" style={{ maxWidth: "280px" }}>
             <div className="flex items-center mb-1 bg-gradient-to-r from-indigo-50 to-sky-50 p-2 rounded-t border-b border-gray-200">
               <Code size={16} className="mr-2 text-indigo-500 animate-pulse-light" />
               <span className="font-handwritten text-xs text-indigo-700">game.js</span>
@@ -100,10 +100,10 @@ const Hero: React.FC = () => {
               href="http://jam.pieter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50 submit-button"
+              className="enhanced-submit-button group"
             >
               Submit Your Entry
-              <Sparkles className="inline-block ml-2 w-5 h-5" />
+              <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
             </a>
           </div>
         </div>
