@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import VibeButton from './VibeButton';
-import { Star, Sparkles, Send, Code } from 'lucide-react';
+import { Star, Sparkles, Send, Code, Terminal } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,7 +33,10 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* World art removed from hero section */}
+        {/* World art properly positioned above the 2025 button */}
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-0 world-rotate">
+          <img src="/lovable-uploads/7d4627e8-3edf-4015-98fb-da635d0451ca.png" alt="World doodle" className="w-48 md:w-64 opacity-60" />
+        </div>
         
         <div className="absolute top-20 left-10 transform rotate-12">
           <Star size={50} className="text-gray-200" />
@@ -45,7 +48,7 @@ const Hero: React.FC = () => {
           <Sparkles size={60} className="text-gray-200" />
         </div>
 
-        {/* Jet in right side, NO animation */}
+        {/* Jet in right side, without animation */}
         <div className="flying-element bottom-[20%] right-[15%]" style={{ opacity: "0.7" }}>
           <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
         </div>
@@ -57,7 +60,7 @@ const Hero: React.FC = () => {
         
         {/* Code snippet illustration with pastel colors and smaller size */}
         <div className="absolute bottom-[15%] left-[8%] z-0 opacity-80 code-snippet-card">
-          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-md" style={{ maxWidth: "240px" }}>
+          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-md" style={{ maxWidth: "220px" }}>
             <div className="flex items-center mb-1">
               <Code size={16} className="mr-2" />
               <span className="font-handwritten text-xs">game.js</span>
@@ -78,7 +81,7 @@ const Hero: React.FC = () => {
       
       <div ref={sectionRef} className="container mx-auto px-6 relative z-10 section-animate">
         <div className="text-center max-w-4xl mx-auto">
-          <span className="inline-flex items-center px-4 py-1.5 mb-8 text-lg font-handwritten border-2 border-black rounded-full bg-gray-100 shadow-md">
+          <span className="inline-flex items-center px-4 py-1.5 mb-8 text-lg font-handwritten border-2 border-black rounded-full bg-gray-100 shadow-md code-year-button">
             <Code size={18} className="mr-2 text-sky-500" />
             <span className="font-mono">2025</span>
           </span>
@@ -97,7 +100,7 @@ const Hero: React.FC = () => {
               href="http://jam.pieter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
+              className="submit-button-main group"
             >
               Submit Your Entry
               <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

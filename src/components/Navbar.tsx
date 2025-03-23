@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
             href="http://jam.pieter.com" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="doodle-button group"
+            className="submit-button-nav"
           >
             <span>Submit Entry</span>
             <Send className="w-4 h-4 inline-block ml-1 group-hover:translate-x-1 transition-transform" />

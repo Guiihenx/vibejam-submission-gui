@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { PenLine, Code, Send } from 'lucide-react';
+import { Terminal, Code, Send, FileCode, Braces } from 'lucide-react';
 
 const SubmitSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -42,11 +42,11 @@ const SubmitSection: React.FC = () => {
         />
       </div>
       
-      {/* Code snippet for submit section with animation and pastel colors */}
-      <div className="absolute top-[40%] right-20 z-0 opacity-80 code-snippet-card">
+      {/* Code snippet for submit section with animation and pastel colors - repositioned to avoid overlap */}
+      <div className="absolute bottom-[20%] right-20 z-0 opacity-80 code-snippet-card">
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md" style={{ maxWidth: "220px" }}>
           <div className="flex items-center mb-2">
-            <Code size={16} className="mr-2" />
+            <FileCode size={16} className="mr-2" />
             <span className="font-handwritten text-xs">submit.js</span>
           </div>
           <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
@@ -69,23 +69,24 @@ const SubmitSection: React.FC = () => {
         <div className="doodle-card bg-opacity-100 max-w-4xl mx-auto border-4 border-black bg-gradient-to-b from-white to-blue-50">
           <div className="relative z-10 text-center">
             <div className="w-20 h-20 mx-auto rounded-full border-2 border-black flex items-center justify-center mb-6 bg-white">
-              <Code className="w-10 h-10 text-sky-500" />
+              <Braces className="w-10 h-10 text-sky-500" />
             </div>
             
             <h2 className="doodle-title-large mb-8">
-              <Code size={28} className="inline-block mr-2 mb-1 text-sky-500" />
-              Ready to Join <span className="doodle-highlight-blue">#vibejam</span>?
+              <Terminal size={28} className="inline-block mr-2 mb-1 text-sky-500" />
+              Code Your <span className="doodle-highlight-blue">Game Future</span>
             </h2>
             
             <p className="doodle-text mb-10 max-w-xl mx-auto text-slate-700">
-              Submit your AI-powered game and showcase your innovative approach to game development.
+              Join the vibecode revolution and bring your AI-powered game vision to life.
+              Our jury is ready to experience your digital masterpiece.
             </p>
             
             <a 
               href="http://jam.pieter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
+              className="submit-button-main group"
             >
               Submit Your Entry Now
               <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -43,18 +43,18 @@
 }
 
 /* Code particle styles */
-.code-particle {
+.code-line-particle {
   position: absolute;
   font-family: monospace;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   pointer-events: none;
   opacity: 0;
   z-index: 5;
-  animation: code-particle 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: code-line-particle 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
-.code-ripple {
+.code-pulse-ring {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -65,18 +65,119 @@
   border: 2px solid rgba(99, 102, 241, 0.6);
   border-radius: 50%;
   pointer-events: none;
-  animation: code-ripple 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: code-pulse-ring 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
-@keyframes code-particle {
-  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+@keyframes code-line-particle {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
   20% { opacity: 1; }
-  90% { transform: scale(1.5) rotate(10deg); opacity: 0.8; }
-  100% { transform: scale(2) rotate(15deg); opacity: 0; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(-40px) scale(1.2); opacity: 0; }
 }
 
-@keyframes code-ripple {
-  0% { width: 10px; height: 10px; opacity: 1; }
-  100% { width: 300px; height: 300px; opacity: 0; border-width: 1px; }
+@keyframes code-pulse-ring {
+  0% { width: 10px; height: 10px; opacity: 0.8; border-width: 2px; }
+  100% { width: 200px; height: 200px; opacity: 0; border-width: 1px; }
 }
 
+/* World rotation animation */
+.world-rotate {
+  animation: world-rotate 40s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes world-rotate {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Code year button styles */
+.code-year-button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.code-year-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+  background-color: #f0f9ff;
+}
+
+/* Submit button styles */
+.submit-button-main {
+  @apply relative inline-flex items-center justify-center gap-2 font-handwritten text-2xl
+    bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50
+    border-2 border-black rounded-full px-8 py-3 transition-all duration-300 shadow-md;
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.submit-button-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+}
+
+.submit-button-main:active {
+  transform: translateY(1px);
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+.submit-button-nav {
+  @apply relative inline-flex items-center justify-center gap-2 font-handwritten text-lg
+    bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50
+    border-2 border-black rounded-full px-4 py-1 transition-all duration-300 shadow-sm group;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+.submit-button-nav:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+/* VibeButton new styles */
+.vibe-button {
+  @apply inline-flex items-center justify-center gap-2 font-mono text-lg
+    bg-gradient-to-r from-indigo-50 to-white hover:from-indigo-100 hover:to-indigo-50
+    border-2 border-black rounded-lg px-6 py-3 transition-all duration-300;
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.vibe-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+}
+
+.vibe-button:active {
+  transform: translateY(1px);
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+.vibe-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 25%, rgba(99, 102, 241, 0.1) 50%, transparent 75%);
+  background-size: 200% 200%;
+  border-radius: 0.5rem;
+  animation: shimmer 3s infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vibe-button:hover::before {
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Code snippet cards - ensure they never appear on top of other elements */
+.code-snippet-card {
+  z-index: 0 !important;
+  pointer-events: none;
+}
+
+.code-snippet-card:hover {
+  z-index: 0 !important;
+}

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Sparkles, Code } from 'lucide-react';
+import { Terminal, Code, Braces } from 'lucide-react';
 
 const VibeButton: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -13,23 +13,23 @@ const VibeButton: React.FC = () => {
     // Create code particles effect
     const button = document.querySelector('.vibe-button');
     if (button) {
-      // Create code snippet particles
-      for (let i = 0; i < 12; i++) {
+      // Create code line particles
+      for (let i = 0; i < 8; i++) {
         const particle = document.createElement('span');
-        particle.classList.add('code-particle');
+        particle.classList.add('code-line-particle');
         
-        // Random code symbols
-        const symbols = ['{ }', '( )', '< >', ';', '=>', '++', '--', '&&', '||', '==', '0101'];
+        // Different code symbols
+        const symbols = ['{', '}', '<', '>', '()', '=>', '++', '::'];
         const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
         particle.textContent = randomSymbol;
         
-        // Position particles in a circle around the button
-        const angle = (i / 12) * 2 * Math.PI;
+        // Position particles around the button
+        const angle = (i / 8) * 2 * Math.PI;
         const distance = 40 + Math.random() * 20;
         particle.style.left = `calc(50% + ${Math.cos(angle) * distance}px)`;
         particle.style.top = `calc(50% + ${Math.sin(angle) * distance}px)`;
         
-        // Random colors for code particles
+        // Pastel colors for code particles
         const colors = ['#D3E4FD', '#E5DEFF', '#FFDEE2', '#FDE1D3', '#F2FCE2'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         particle.style.color = randomColor;
@@ -43,41 +43,40 @@ const VibeButton: React.FC = () => {
           if (particle && particle.parentNode) {
             particle.remove();
           }
-        }, 1000);
+        }, 1500);
       }
       
-      // Add code ripple effect
-      const ripple = document.createElement('span');
-      ripple.classList.add('code-ripple');
-      button.appendChild(ripple);
+      // Add pulse ring effect
+      const ring = document.createElement('span');
+      ring.classList.add('code-pulse-ring');
+      button.appendChild(ring);
       
-      // Remove ripple after animation
+      // Remove ring after animation
       setTimeout(() => {
-        if (ripple && ripple.parentNode) {
-          ripple.remove();
+        if (ring && ring.parentNode) {
+          ring.remove();
         }
-      }, 1000);
+      }, 1500);
     }
     
     // Reset animation state
     setTimeout(() => {
       setIsAnimating(false);
-    }, 1200);
+    }, 1500);
   };
   
   return (
     <button
       onClick={handleClick}
-      className={`vibe-button inline-flex items-center justify-center gap-2 relative overflow-hidden 
-        ${isAnimating ? 'animate-pulse-light' : ''} 
-        bg-gradient-to-r from-indigo-50 to-white hover:from-indigo-100 hover:to-white border-2 border-black rounded-full px-8 py-3 font-mono text-lg
-      `}
+      className={`vibe-button relative overflow-hidden ${isAnimating ? 'animate-pulse-light' : ''}`}
       aria-label="Run code"
       disabled={isAnimating}
     >
-      <Code className="w-5 h-5 text-indigo-500" />
-      <span className="font-mono">run(vibeCode)</span>
-      <Sparkles className={`w-5 h-5 text-indigo-500 transition-all ${isAnimating ? 'animate-pulse-light' : 'opacity-70'}`} />
+      <span className="flex items-center gap-2 relative z-10">
+        <Braces className="w-5 h-5 text-indigo-500" />
+        <span className="font-mono">run(vibeCode)</span>
+        <Code className={`w-5 h-5 text-indigo-500 transition-all ${isAnimating ? 'animate-pulse-light' : 'opacity-70'}`} />
+      </span>
     </button>
   );
 };
