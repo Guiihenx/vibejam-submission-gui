@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Flying illustrations - rearranged */}
-        {/* Kept Jet in bottom right */}
+        {/* Kept Jet in bottom right, removed spinning animation */}
         <div className="flying-element bottom-[10%] right-[10%] animate-float-element" style={{ animationDelay: "1s" }}>
           <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
         </div>
@@ -63,8 +63,8 @@ const Hero: React.FC = () => {
           <img src="/lovable-uploads/ebb5d507-5505-4561-895b-9d616a67c6e1.png" alt="UFO doodle" />
         </div>
         
-        {/* Code snippet illustration */}
-        <div className="absolute bottom-[20%] left-[10%] z-0 opacity-80">
+        {/* Code snippet illustration with pastel colors and animation */}
+        <div className="absolute bottom-[20%] left-[10%] z-0 opacity-80 code-snippet-card">
           <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-5deg] shadow-md">
             <div className="flex items-center mb-2">
               <Code size={18} className="mr-2" />
@@ -72,11 +72,11 @@ const Hero: React.FC = () => {
             </div>
             <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
               <code>
-{`function vibeCode() {
-  const game = new Game();
-  game.createWorld();
-  game.addPlayer();
-  return game.start();
+{`function <span class="text-sky-500">vibeCode</span>() {
+  const <span class="text-green-500">game</span> = new Game();
+  <span class="text-green-500">game</span>.createWorld();
+  <span class="text-green-500">game</span>.addPlayer();
+  return <span class="text-green-500">game</span>.<span class="text-pink-500">start</span>();
 }`}
               </code>
             </pre>

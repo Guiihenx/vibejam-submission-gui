@@ -39,8 +39,8 @@ const SponsorsSection: React.FC = () => {
         />
       </div>
       
-      {/* Code snippet illustration for sponsors section */}
-      <div className="absolute top-20 right-20 z-0 opacity-80">
+      {/* Code snippet illustration for sponsors section - moved below title */}
+      <div className="absolute top-40 right-20 z-0 opacity-80 code-snippet-card">
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[3deg] shadow-md">
           <div className="flex items-center mb-2">
             <Code size={18} className="mr-2" />
@@ -48,12 +48,12 @@ const SponsorsSection: React.FC = () => {
           </div>
           <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
             <code>
-{`const sponsors = [
-  { name: "Bolt", tier: "Gold" },
-  { name: "CodeRabbit", tier: "Gold" }
+{`const <span class="text-purple-400">sponsors</span> = [
+  { name: "<span class="text-blue-400">Bolt</span>", tier: "Gold" },
+  { name: "<span class="text-green-400">CodeRabbit</span>", tier: "Gold" }
 ];
 
-sponsors.forEach(s => addBadge(s));`}
+<span class="text-purple-400">sponsors</span>.forEach(s => addBadge(s));`}
             </code>
           </pre>
         </div>

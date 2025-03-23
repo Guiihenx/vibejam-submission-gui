@@ -42,8 +42,8 @@ const SubmitSection: React.FC = () => {
         />
       </div>
       
-      {/* Code snippet for submit section */}
-      <div className="absolute top-20 right-20 z-0 opacity-80">
+      {/* Code snippet for submit section with animation and pastel colors */}
+      <div className="absolute top-20 right-20 z-0 opacity-80 code-snippet-card">
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md">
           <div className="flex items-center mb-2">
             <Code size={18} className="mr-2" />
@@ -51,12 +51,12 @@ const SubmitSection: React.FC = () => {
           </div>
           <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
             <code>
-{`function submitGame(game) {
-  if (game.isVibeCoded) {
-    return api.submit({
-      title: game.title,
-      author: game.author,
-      url: game.playUrl
+{`function <span class="text-indigo-500">submitGame</span>(game) {
+  if (<span class="text-pink-400">game.isVibeCoded</span>) {
+    return <span class="text-blue-400">api</span>.submit({
+      title: <span class="text-green-400">game.title</span>,
+      author: <span class="text-green-400">game.author</span>,
+      url: <span class="text-green-400">game.playUrl</span>
     });
   }
 }`}

@@ -13,7 +13,7 @@ const VibeButton: React.FC = () => {
     // Create ripple effect with multiple circles
     const button = document.querySelector('.vibe-button');
     if (button) {
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 5; i++) {
         const ripple = document.createElement('span');
         ripple.classList.add('ripple-effect');
         ripple.style.animationDelay = `${i * 100}ms`;
@@ -22,6 +22,21 @@ const VibeButton: React.FC = () => {
         // Remove ripple after animation
         setTimeout(() => {
           ripple.remove();
+        }, 1000);
+      }
+      
+      // Add sparkle burst effect
+      for (let i = 0; i < 12; i++) {
+        const sparkle = document.createElement('span');
+        sparkle.classList.add('sparkle-burst');
+        sparkle.style.left = `${50 + 30 * Math.cos(i * Math.PI / 6)}%`;
+        sparkle.style.top = `${50 + 30 * Math.sin(i * Math.PI / 6)}%`;
+        sparkle.style.animationDelay = `${i * 50}ms`;
+        button.appendChild(sparkle);
+        
+        // Remove sparkle after animation
+        setTimeout(() => {
+          sparkle.remove();
         }, 1000);
       }
     }
@@ -65,7 +80,7 @@ const VibeButton: React.FC = () => {
         isVibrating ? 'animate-wiggle' : ''
       } ${
         isGlowing ? 'vibe-glow' : ''
-      }`}
+      } bg-gradient-to-r from-sky-50 to-white hover:from-sky-100 hover:to-white`}
       aria-label="Click to vibrate"
     >
       <Pencil className="w-5 h-5" />
