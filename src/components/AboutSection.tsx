@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { PenTool, Gamepad2, Sparkles } from 'lucide-react';
+import { PenTool, Gamepad2, Sparkles, Terminal } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,10 @@ const AboutSection: React.FC = () => {
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
         <div className="text-center mb-16">
-          <h2 className="doodle-title-large mb-6">About <span className="doodle-highlight">#vibejam</span></h2>
+          <h2 className="doodle-title-large mb-6">
+            <Terminal className="w-8 h-8 inline-block mr-3 text-blue-500" />
+            About <span className="doodle-highlight">#vibejam</span>
+          </h2>
           <p className="doodle-text max-w-3xl mx-auto">
             The intersection of artificial intelligence and creative coding to build the next generation of games.
           </p>

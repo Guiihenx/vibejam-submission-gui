@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Twitter, Code } from 'lucide-react';
+import { Code, GitBranch } from 'lucide-react';
+import XLogo from './XLogo';
 
 type JuryMember = {
   handle: string;
@@ -66,20 +67,20 @@ const JurySection: React.FC = () => {
     <section id="jury" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
       
-      {/* Code snippet illustration for jury section */}
-      <div className="absolute top-20 left-20 z-0 opacity-80">
-        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-md">
-          <div className="flex items-center mb-2">
-            <Code size={18} className="mr-2" />
-            <span className="font-handwritten text-sm">jury.js</span>
+      {/* Enhanced code snippet illustration for jury section */}
+      <div className="absolute top-20 left-20 z-0 opacity-90 code-snippet-card animate-float-slow">
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-lg hover:shadow-xl transition-all duration-500">
+          <div className="flex items-center mb-2 bg-gradient-to-r from-violet-50 to-indigo-50 p-2 rounded-t border-b border-gray-200">
+            <Code size={18} className="mr-2 text-violet-500 animate-pulse-light" />
+            <span className="font-handwritten text-sm text-violet-700">jury.js</span>
           </div>
-          <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
-            <code>
-{`async function evaluateGames() {
-  const entries = await fetchAll();
-  const jury = await assembleJury();
+          <pre className="text-left text-xs font-mono bg-gradient-to-br from-violet-50 via-indigo-50 to-white p-2 rounded">
+            <code className="code-highlight">
+{`async function <span class="text-purple-500 glow-text">evaluateGames</span>() {
+  const <span class="text-pink-500 glow-text">entries</span> = await fetchAll();
+  const <span class="text-blue-500 glow-text">jury</span> = await assembleJury();
   
-  return jury.scoreGames(entries);
+  return <span class="text-blue-500 glow-text">jury</span>.scoreGames(<span class="text-pink-500 glow-text">entries</span>);
 }`}
             </code>
           </pre>
@@ -88,7 +89,10 @@ const JurySection: React.FC = () => {
       
       <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
         <div className="text-center mb-16">
-          <h2 className="doodle-title-large mb-6">Meet the <span className="doodle-highlight-blue">Jury</span></h2>
+          <h2 className="doodle-title-large mb-6">
+            <GitBranch className="w-8 h-8 inline-block mr-3 text-violet-500" />
+            Meet the <span className="doodle-highlight-blue">Jury</span>
+          </h2>
           <p className="doodle-text max-w-2xl mx-auto">
             Industry experts who will review and select the most innovative game submissions.
           </p>
@@ -116,7 +120,7 @@ const JurySection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-vibejam-blue hover:underline text-lg font-handwritten group"
               >
-                <Twitter className="w-5 h-5 group-hover:text-blue-500 transition-colors" />
+                <XLogo className="w-5 h-5 group-hover:text-blue-500 transition-colors" />
                 <span className="group-hover:text-blue-500 transition-colors">{member.handle}</span>
               </a>
             </div>

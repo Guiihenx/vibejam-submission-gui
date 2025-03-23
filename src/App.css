@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +41,90 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Enhanced code snippet styles */
+.code-highlight span {
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.glow-text {
+  text-shadow: 0 0 2px currentColor;
+}
+
+.glow-text:hover {
+  text-shadow: 0 0 8px currentColor;
+  transform: scale(1.05);
+}
+
+.code-snippet-card {
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.code-snippet-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced badge styles for 2025 */
+.code-year-badge {
+  transition: all 0.3s ease;
+}
+
+.code-year-badge:hover {
+  transform: translateY(-3px);
+}
+
+.code-glow {
+  animation: code-pulse 2s ease-in-out infinite;
+}
+
+.code-spin-slow {
+  animation: spin-gentle 8s linear infinite;
+}
+
+/* New button style for "Deploy Codewave" */
+.code-pulse-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.code-pulse-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.15), 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.code-glow-effect {
+  animation: code-glow-pulse 1.5s ease-in-out;
+  box-shadow: 0 0 25px 10px rgba(99, 102, 241, 0.2), 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+/* Animations */
+@keyframes code-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; text-shadow: 0 0 8px currentColor; }
+}
+
+@keyframes code-glow-pulse {
+  0% { box-shadow: 0 0 5px 0px rgba(99, 102, 241, 0.2), 3px 3px 0px 0px rgba(0,0,0,1); }
+  50% { box-shadow: 0 0 35px 15px rgba(99, 102, 241, 0.4), 3px 3px 0px 0px rgba(0,0,0,1); }
+  100% { box-shadow: 0 0 5px 0px rgba(99, 102, 241, 0.2), 3px 3px 0px 0px rgba(0,0,0,1); }
+}
+
+@keyframes spin-gentle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(var(--rotate, -5deg)); }
+  50% { transform: translateY(-10px) rotate(calc(var(--rotate, -5deg) + 2deg)); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+

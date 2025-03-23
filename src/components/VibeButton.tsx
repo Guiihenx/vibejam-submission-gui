@@ -1,17 +1,19 @@
 
 import React, { useState } from 'react';
-import { Sparkles, ZapIcon } from 'lucide-react';
+import { GitBranch, Code, Sparkles } from 'lucide-react';
 
 const VibeButton: React.FC = () => {
-  const [isVibrating, setIsVibrating] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [isGlowing, setIsGlowing] = useState(false);
   
-  const handleVibrate = () => {
-    setIsVibrating(true);
+  const handleClick = () => {
+    if (isAnimating) return;
+    
+    setIsAnimating(true);
     setIsGlowing(true);
     
     // Create starburst effect
-    const button = document.querySelector('.vibe-button');
+    const button = document.querySelector('.code-pulse-button');
     if (button) {
       // Create colorful starburst particles
       for (let i = 0; i < 16; i++) {
@@ -19,7 +21,7 @@ const VibeButton: React.FC = () => {
         particle.classList.add('starburst-particle');
         
         // Set random pastel colors
-        const colors = ['#FFDEE2', '#D3E4FD', '#FDE1D3', '#E5DEFF', '#F2FCE2'];
+        const colors = ['#E5DEFF', '#D3E4FD', '#F2FCE2', '#FFDEE2', '#FDE1D3'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         particle.style.background = randomColor;
         
@@ -50,9 +52,9 @@ const VibeButton: React.FC = () => {
       }, 1000);
     }
     
-    // Reset vibration after animation completes
+    // Reset animation after animation completes
     setTimeout(() => {
-      setIsVibrating(false);
+      setIsAnimating(false);
     }, 600);
     
     // Reset glow after slightly longer
@@ -63,17 +65,18 @@ const VibeButton: React.FC = () => {
   
   return (
     <button
-      onClick={handleVibrate}
-      className={`vibe-button doodle-button inline-flex items-center justify-center gap-2 relative overflow-hidden ${
-        isVibrating ? 'animate-wiggle' : ''
+      onClick={handleClick}
+      className={`code-pulse-button relative overflow-hidden ${
+        isAnimating ? 'animate-wiggle' : ''
       } ${
-        isGlowing ? 'vibe-glow' : ''
-      } bg-gradient-to-r from-sky-50 to-white hover:from-sky-100 hover:to-white`}
-      aria-label="Click to vibrate"
+        isGlowing ? 'code-glow-effect' : ''
+      } doodle-button bg-gradient-to-r from-violet-50 via-indigo-50 to-white hover:from-violet-100 hover:to-indigo-50 group`}
+      aria-label="Click for code effect"
+      disabled={isAnimating}
     >
-      <ZapIcon className="w-5 h-5 text-yellow-400" />
-      <span>Feel the vibe</span>
-      <Sparkles className={`w-5 h-5 text-yellow-400 transition-all ${isGlowing ? 'animate-pulse-light' : 'opacity-70'}`} />
+      <Code className="w-5 h-5 text-indigo-500 mr-2 group-hover:animate-spin-slow transition-all" />
+      <span>Deploy Codewave</span>
+      <GitBranch className={`w-5 h-5 ml-2 text-violet-500 transition-all ${isGlowing ? 'animate-pulse-light' : 'opacity-70'}`} />
     </button>
   );
 };

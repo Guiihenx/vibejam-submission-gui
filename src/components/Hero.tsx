@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import VibeButton from './VibeButton';
-import { Star, Sparkles, Zap, Code } from 'lucide-react';
+import { Star, Sparkles, Code, Terminal, GitBranch } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,14 +33,7 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* World map ABOVE hero content */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-15 pointer-events-none z-0">
-          <img 
-            src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
-            alt="World Map" 
-            className="w-[40vw] max-w-[400px] animate-spin-slow"
-          />
-        </div>
+        {/* Removed World map */}
         
         <div className="absolute top-20 left-10 transform rotate-12">
           <Star size={50} className="text-gray-200" />
@@ -62,20 +55,20 @@ const Hero: React.FC = () => {
           <img src="/lovable-uploads/ebb5d507-5505-4561-895b-9d616a67c6e1.png" alt="UFO doodle" />
         </div>
         
-        {/* Code snippet illustration with pastel colors and smaller size */}
-        <div className="absolute bottom-[15%] left-[8%] z-0 opacity-80 code-snippet-card">
-          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-md" style={{ maxWidth: "240px" }}>
-            <div className="flex items-center mb-1">
-              <Code size={16} className="mr-2" />
-              <span className="font-handwritten text-xs">game.js</span>
+        {/* Enhanced code snippet illustration with pastel colors and smooth animation */}
+        <div className="absolute bottom-[15%] left-[8%] z-0 opacity-90 code-snippet-card animate-float-slow">
+          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-lg hover:shadow-xl transition-all duration-500" style={{ maxWidth: "280px" }}>
+            <div className="flex items-center mb-1 bg-gradient-to-r from-indigo-50 to-sky-50 p-2 rounded-t border-b border-gray-200">
+              <Code size={16} className="mr-2 text-indigo-500 animate-pulse-light" />
+              <span className="font-handwritten text-xs text-indigo-700">game.js</span>
             </div>
-            <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
-              <code>
-{`function <span class="text-sky-500">vibeCode</span>() {
-  const <span class="text-green-500">game</span> = new Game();
-  <span class="text-green-500">game</span>.createWorld();
-  <span class="text-green-500">game</span>.addPlayer();
-  return <span class="text-pink-500">game</span>.<span class="text-indigo-500">start</span>();
+            <pre className="text-left text-xs font-mono bg-gradient-to-br from-violet-50 via-sky-50 to-white p-3 rounded">
+              <code className="code-highlight">
+{`function <span class="text-pink-500 glow-text">vibeCode</span>() {
+  const <span class="text-green-500 glow-text">game</span> = new Game();
+  <span class="text-green-500 glow-text">game</span>.createWorld();
+  <span class="text-green-500 glow-text">game</span>.addPlayer();
+  return <span class="text-indigo-500 glow-text">game</span>.<span class="text-purple-500 glow-text">start</span>();
 }`}
               </code>
             </pre>
@@ -85,11 +78,23 @@ const Hero: React.FC = () => {
       
       <div ref={sectionRef} className="container mx-auto px-6 relative z-10 section-animate">
         <div className="text-center max-w-4xl mx-auto">
-          <span className="inline-block px-5 py-2 mb-8 text-xl font-handwritten border-2 border-black rounded-full bg-white shadow-md">
-            <span className="text-sky-400">2025</span>
-          </span>
+          {/* Enhanced 2025 button */}
+          <div className="inline-block mb-8 code-year-badge">
+            <div className="font-mono border-2 border-black rounded-full px-3 py-1.5 bg-gradient-to-r from-indigo-50 via-sky-50 to-white shadow-md relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-sky-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex items-center space-x-2">
+                <Terminal size={16} className="text-sky-500 code-spin-slow" />
+                <code className="text-lg">
+                  <span className="text-indigo-500">&lt;</span>
+                  <span className="text-sky-600 code-glow">2025</span>
+                  <span className="text-indigo-500">/&gt;</span>
+                </code>
+              </div>
+            </div>
+          </div>
           
           <h1 className="doodle-title-large mb-10 leading-tight tracking-tight">
+            <Code className="w-8 h-8 inline-block mr-3 text-indigo-500" />
             Vibe <span className="doodle-highlight-blue">Coding</span> Game Jam
           </h1>
           
