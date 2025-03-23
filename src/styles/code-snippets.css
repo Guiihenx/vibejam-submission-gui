@@ -1,0 +1,71 @@
+
+/* Code particle styles */
+.code-line-particle {
+  position: absolute;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 5;
+  animation: code-line-particle 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  text-shadow: 0 0 8px rgba(100, 108, 255, 0.5);
+}
+
+.code-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: 2px solid rgba(99, 102, 241, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: code-pulse-ring 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* Code snippet cards */
+.code-snippet-card {
+  animation: float-subtle 8s ease-in-out infinite;
+  transition: all 0.3s ease;
+  z-index: 0;
+  max-width: 280px;
+  pointer-events: none;
+}
+
+.code-snippet-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  z-index: 5;
+}
+
+.code-snippet-card span.text-sky-500,
+.code-snippet-card span.text-green-500,
+.code-snippet-card span.text-pink-500,
+.code-snippet-card span.text-indigo-500,
+.code-snippet-card span.text-blue-400,
+.code-snippet-card span.text-purple-400,
+.code-snippet-card span.text-pink-400,
+.code-snippet-card span.text-green-400 {
+  animation: text-glow 3s ease-in-out infinite;
+  position: relative;
+  display: inline-block;
+}
+
+.code-snippet-card code span {
+  display: inline-block;
+  animation: color-pulse 3s ease-in-out infinite;
+}
+
+/* Code year button */
+.code-year-button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.code-year-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+  background-color: #f0f9ff;
+}
