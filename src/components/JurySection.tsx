@@ -73,6 +73,15 @@ const JurySection: React.FC = () => {
     <section id="jury" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
       
+      {/* Airplane decoration on the right side */}
+      <div className="absolute top-1/4 right-0 z-10 w-32 md:w-48 xl:w-56 animate-plane">
+        <img 
+          src="/lovable-uploads/3bda189a-ea9f-43b3-8140-3af1c8ae92cb.png" 
+          alt="Airplane" 
+          className="w-full h-auto transform -rotate-12 hover:rotate-0 transition-all duration-700 hover:scale-110"
+        />
+      </div>
+      
       {/* Enhanced code snippet illustration for jury section - repositioned */}
       <div className="absolute top-40 left-20 z-0 opacity-90 code-snippet-card animate-float-slow">
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-lg hover:shadow-xl transition-all duration-500">
@@ -111,8 +120,8 @@ const JurySection: React.FC = () => {
               className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-3 hover:rotate-1 relative group"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Game-related floating icon - repositioned to not overlap */}
-              <div className="absolute -top-8 -right-8 transform rotate-12 transition-all duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:-translate-y-2">
+              {/* Game-related floating icon - moved to top-right corner outside card */}
+              <div className="absolute -top-5 -right-5 transform rotate-12 transition-all duration-300 group-hover:rotate-0 group-hover:scale-110 group-hover:-translate-y-2 z-10">
                 {member.icon}
               </div>
               

@@ -29,12 +29,21 @@ const Hero: React.FC = () => {
   }, []);
 
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
-      {/* Gamepad image at the top of the header */}
-      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-24 h-24 md:w-40 md:h-40 z-10">
+      {/* Gamepad image at the top of the header - BIGGER SIZE */}
+      <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-32 h-32 md:w-56 md:h-56 z-10">
         <img 
           src="/lovable-uploads/3d2f00ca-8048-4211-98aa-fd3b609f94c9.png" 
           alt="Gamepad" 
           className="w-full h-full object-contain animate-float"
+        />
+      </div>
+      
+      {/* Rocket illustration in bottom right */}
+      <div className="absolute bottom-10 right-10 z-10 w-24 h-24 md:w-40 md:h-40 animate-rocket">
+        <img 
+          src="/lovable-uploads/8e247c81-02ed-4e0b-92fd-109966cb082c.png" 
+          alt="Rocket" 
+          className="w-full h-full object-contain transform rotate-12 hover:rotate-0 transition-all duration-500 hover:scale-110"
         />
       </div>
       

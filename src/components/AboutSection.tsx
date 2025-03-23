@@ -32,6 +32,15 @@ const AboutSection: React.FC = () => {
     <section id="about" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-white"></div>
       
+      {/* UFO illustration in bottom left */}
+      <div className="absolute bottom-10 left-10 z-10 w-28 md:w-40 xl:w-48 animate-ufo">
+        <img 
+          src="/lovable-uploads/288acc21-d9f3-46c3-a12d-7dd58be7e2f5.png" 
+          alt="UFO" 
+          className="w-full h-auto hover:scale-110 transition-all duration-700"
+        />
+      </div>
+      
       {/* Flying balloon decoration */}
       <div className="flying-doodle top-20 right-10">
         <img 
