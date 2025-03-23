@@ -1,11 +1,8 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Zap, Code, FileCode, Award, Trophy, Star, Sparkles, BadgeCheck, Rocket } from 'lucide-react';
 import XLogo from './XLogo';
-
 const SponsorsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -16,35 +13,26 @@ const SponsorsSection: React.FC = () => {
     }, {
       threshold: 0.1
     });
-
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
   return <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
       {/* Hot air balloon on the left side */}
       <div className="absolute top-40 left-20 z-10 w-40 md:w-52 xl:w-56 animate-float">
-        <img 
-          src="/lovable-uploads/3bcadc1a-30e6-4ad4-90d2-94bf90a7b5c7.png" 
-          alt="Hot air balloon" 
-          className="w-full h-auto object-contain"
-        />
+        
       </div>
       
       {/* Arcade machine on left side */}
-      <div className="absolute top-1/4 left-10 z-10 w-32 md:w-40 lg:w-44 animate-float-slow" style={{ animationDelay: "2s" }}>
-        <img 
-          src="/lovable-uploads/3bcadc1a-30e6-4ad4-90d2-94bf90a7b5c7.png" 
-          alt="Arcade machine" 
-          className="w-full h-auto object-contain transform rotate-[-5deg] hover:rotate-0 transition-all duration-500"
-        />
+      <div className="absolute top-1/4 left-10 z-10 w-32 md:w-40 lg:w-44 animate-float-slow" style={{
+      animationDelay: "2s"
+    }}>
+        <img src="/lovable-uploads/3bcadc1a-30e6-4ad4-90d2-94bf90a7b5c7.png" alt="Arcade machine" className="w-full h-auto object-contain transform rotate-[-5deg] hover:rotate-0 transition-all duration-500" />
       </div>
       
       {/* Enhanced code snippet illustration for sponsors section */}
@@ -134,5 +122,4 @@ const SponsorsSection: React.FC = () => {
       </div>
     </section>;
 };
-
 export default SponsorsSection;
