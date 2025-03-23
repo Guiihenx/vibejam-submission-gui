@@ -32,7 +32,7 @@ const SubmitSection: React.FC = () => {
     <section className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-sky-50"></div>
       
-      {/* Ship illustration */}
+      {/* Ship illustration with enhanced animation */}
       <div className="absolute bottom-10 left-10 z-0 opacity-15 pointer-events-none">
         <img 
           src="/lovable-uploads/8553bec3-ce97-4fba-9542-9b5285e5a459.png" 
@@ -42,9 +42,9 @@ const SubmitSection: React.FC = () => {
         />
       </div>
       
-      {/* Code snippet for submit section with animation and pastel colors - repositioned to avoid overlap */}
+      {/* Enhanced code snippet for submit section with animations */}
       <div className="absolute bottom-[20%] right-20 z-0 opacity-80 code-snippet-card">
-        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md" style={{ maxWidth: "220px" }}>
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md hover:shadow-xl transition-all duration-500" style={{ maxWidth: "220px" }}>
           <div className="flex items-center mb-2">
             <FileCode size={16} className="mr-2" />
             <span className="font-handwritten text-xs">submit.js</span>

@@ -6,35 +6,47 @@ type JuryMember = {
   handle: string;
   name: string;
   role: string;
+  twitterUrl: string; // Add Twitter URL
 };
 
 const juryMembers: JuryMember[] = [
   { 
     handle: '@karpathy',
     name: 'Andrej Karpathy',
-    role: 'AI Researcher'
+    role: 'AI Researcher',
+    twitterUrl: 'https://twitter.com/karpathy'
   },
   { 
     handle: '@timsoret',
     name: 'Tim Soret',
-    role: 'Game Developer'
+    role: 'Game Developer',
+    twitterUrl: 'https://twitter.com/timsoret'
   },
   { 
     handle: '@mrdoob',
     name: 'Ricardo Cabello',
-    role: 'Creator of Three.js'
+    role: 'Creator of Three.js',
+    twitterUrl: 'https://twitter.com/mrdoob'
   },
   { 
     handle: '@s13k_',
     name: 'S13k',
-    role: 'Tech Innovator'
+    role: 'Tech Innovator',
+    twitterUrl: 'https://twitter.com/s13k_'
   },
   { 
     handle: '@levelsio',
     name: 'Pieter Levels',
-    role: 'Indie Maker'
+    role: 'Indie Maker',
+    twitterUrl: 'https://twitter.com/levelsio'
   }
 ];
+
+// Add sponsor Twitter URLs
+const sponsorTwitterUrls = {
+  'boltdotnew': 'https://twitter.com/boltdotnew',
+  'coderabbitai': 'https://twitter.com/coderabbitai'
+};
 
 const JurySection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -66,8 +78,8 @@ const JurySection: React.FC = () => {
     <section id="jury" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
       
-      {/* World map added from hero section with rotation animation */}
-      <div className="absolute top-20 right-20 opacity-15 pointer-events-none z-0">
+      {/* World map with enhanced rotation animation */}
+      <div className="absolute top-20 right-20 opacity-20 pointer-events-none z-0">
         <img 
           src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
           alt="World Map" 
@@ -75,9 +87,9 @@ const JurySection: React.FC = () => {
         />
       </div>
       
-      {/* Code snippet illustration for jury section */}
-      <div className="absolute top-20 left-20 z-0 opacity-80">
-        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-md" style={{ maxWidth: "220px" }}>
+      {/* Code snippet illustration for jury section with enhanced animations */}
+      <div className="absolute top-20 left-20 z-0 opacity-80 code-snippet-card">
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-md hover:shadow-xl transition-all duration-500" style={{ maxWidth: "220px" }}>
           <div className="flex items-center mb-2">
             <Code size={18} className="mr-2" />
             <span className="font-handwritten text-sm">jury.js</span>
@@ -110,7 +122,7 @@ const JurySection: React.FC = () => {
           {juryMembers.map((member, index) => (
             <div 
               key={member.handle}
-              className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-3 hover:rotate-1"
+              className="doodle-card flex flex-col items-center text-center transition-all hover:-translate-y-3 hover:rotate-1 duration-300"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="w-20 h-20 rounded-full border-2 border-black flex items-center justify-center mb-4 overflow-hidden bg-black text-white">
@@ -123,7 +135,7 @@ const JurySection: React.FC = () => {
               <p className="doodle-text mb-3">{member.role}</p>
               
               <a 
-                href={`https://twitter.com/${member.handle.substring(1)}`}
+                href={member.twitterUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-vibejam-blue hover:underline text-lg font-handwritten group"

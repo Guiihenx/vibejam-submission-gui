@@ -14,23 +14,23 @@ const VibeButton: React.FC = () => {
     const button = document.querySelector('.vibe-button');
     if (button) {
       // Create code line particles
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < 12; i++) {
         const particle = document.createElement('span');
         particle.classList.add('code-line-particle');
         
         // Different code symbols
-        const symbols = ['{', '}', '<>', '()', '=>', '++', '::', '[]'];
+        const symbols = ['{', '}', '<>', '()', '=>', '++', '::', '[]', '&&', '||', '--', '//'];
         const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
         particle.textContent = randomSymbol;
         
         // Position particles around the button
-        const angle = (i / 8) * 2 * Math.PI;
-        const distance = 40 + Math.random() * 20;
+        const angle = (i / 12) * 2 * Math.PI;
+        const distance = 40 + Math.random() * 30;
         particle.style.left = `calc(50% + ${Math.cos(angle) * distance}px)`;
         particle.style.top = `calc(50% + ${Math.sin(angle) * distance}px)`;
         
-        // Pastel colors for code particles
-        const colors = ['#D3E4FD', '#E5DEFF', '#FFDEE2', '#FDE1D3', '#F2FCE2'];
+        // Color palette for code particles
+        const colors = ['#61dafb', '#9580ff', '#ff6b6b', '#ffd166', '#06d6a0'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         particle.style.color = randomColor;
         

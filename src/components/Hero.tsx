@@ -31,36 +31,36 @@ const Hero: React.FC = () => {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
-      {/* Decorative elements - rearranged */}
+      {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* New world art above the 2025 button with rotation effect */}
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-0 world-rotate">
-          <img src="/lovable-uploads/67ab1b28-3a21-4689-bf71-af6ca424c0c5.png" alt="World doodle" className="w-48 md:w-64 opacity-60" />
+        {/* Code year button now has the world art above it with rotation animation */}
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 z-0">
+          <img src="/lovable-uploads/dcd0e4d2-a96b-44e7-870d-190095e24b89.png" alt="UFO with globe" className="w-48 md:w-64 opacity-80 animate-spin-slow" />
         </div>
         
-        <div className="absolute top-20 left-10 transform rotate-12">
-          <Star size={50} className="text-gray-200" />
+        <div className="absolute top-[15%] left-10 transform rotate-12">
+          <Star size={50} className="text-gray-200 animate-pulse-light" />
         </div>
         <div className="absolute bottom-20 right-20 transform -rotate-12">
-          <Star size={70} className="text-gray-200" />
+          <Star size={70} className="text-gray-200 animate-pulse-light" />
         </div>
         <div className="absolute top-1/3 right-10 transform rotate-45">
-          <Sparkles size={60} className="text-gray-200" />
+          <Sparkles size={60} className="text-gray-200 animate-pulse-light" />
         </div>
 
-        {/* Jet in right side, without animation */}
-        <div className="flying-element bottom-[20%] right-[15%]" style={{ opacity: "0.7" }}>
+        {/* Jet in right side with smooth animation */}
+        <div className="flying-element bottom-[20%] right-[15%] animate-float-element">
           <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
         </div>
         
-        {/* UFO kept in similar position */}
-        <div className="flying-element top-[70%] right-[8%] animate-bounce-light">
+        {/* UFO kept with smoother animation */}
+        <div className="flying-element top-[40%] right-[8%] animate-bounce-light">
           <img src="/lovable-uploads/ebb5d507-5505-4561-895b-9d616a67c6e1.png" alt="UFO doodle" />
         </div>
         
-        {/* Code snippet illustration with pastel colors and smaller size */}
+        {/* Code snippet illustration with enhanced animations */}
         <div className="absolute bottom-[15%] left-[8%] z-0 opacity-80 code-snippet-card">
-          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-md" style={{ maxWidth: "220px" }}>
+          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-md hover:shadow-xl transition-all duration-500" style={{ maxWidth: "220px" }}>
             <div className="flex items-center mb-1">
               <Code size={16} className="mr-2" />
               <span className="font-handwritten text-xs">game.js</span>
@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
       
       <div ref={sectionRef} className="container mx-auto px-6 relative z-10 section-animate">
         <div className="text-center max-w-4xl mx-auto">
-          <span className="inline-flex items-center px-4 py-1.5 mb-8 text-lg font-handwritten border-2 border-black rounded-full bg-gray-100 shadow-md code-year-button">
+          <span className="inline-flex items-center px-4 py-1.5 mb-8 text-lg font-handwritten border-2 border-black rounded-full bg-gray-100 shadow-md code-year-button hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <Code size={18} className="mr-2 text-sky-500" />
             <span className="font-mono">2025</span>
           </span>

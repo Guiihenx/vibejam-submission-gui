@@ -5,6 +5,7 @@ import { Pencil, Send, Code } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -50,12 +51,36 @@ const Navbar: React.FC = () => {
           </a>
         </nav>
         
-        <button className="md:hidden text-vibejam-dark-gray">
+        <button 
+          className="md:hidden text-vibejam-dark-gray"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
       </div>
+      
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b-2 border-black">
+          <div className="flex flex-col items-center py-4 space-y-4">
+            <a href="#about" className="font-handwritten text-lg" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#jury" className="font-handwritten text-lg" onClick={() => setMenuOpen(false)}>Jury</a>
+            <a href="#sponsors" className="font-handwritten text-lg" onClick={() => setMenuOpen(false)}>Sponsors</a>
+            <a 
+              href="http://jam.pieter.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="submit-button-nav group"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span>Submit Entry</span>
+              <Send className="w-4 h-4 inline-block ml-1 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
