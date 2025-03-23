@@ -19,7 +19,7 @@ const VibeButton: React.FC = () => {
         particle.classList.add('code-line-particle');
         
         // Different code symbols
-        const symbols = ['{', '}', '<', '>', '()', '=>', '++', '::'];
+        const symbols = ['{', '}', '<>', '()', '=>', '++', '::', '[]'];
         const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
         particle.textContent = randomSymbol;
         
@@ -73,7 +73,7 @@ const VibeButton: React.FC = () => {
       disabled={isAnimating}
     >
       <span className="flex items-center gap-2 relative z-10">
-        <Braces className="w-5 h-5 text-indigo-500" />
+        <Terminal className="w-5 h-5 text-indigo-500" />
         <span className="font-mono">run(vibeCode)</span>
         <Code className={`w-5 h-5 text-indigo-500 transition-all ${isAnimating ? 'animate-pulse-light' : 'opacity-70'}`} />
       </span>

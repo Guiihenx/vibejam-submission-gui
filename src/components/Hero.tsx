@@ -33,9 +33,9 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* World art properly positioned above the 2025 button */}
+        {/* New world art above the 2025 button with rotation effect */}
         <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-0 world-rotate">
-          <img src="/lovable-uploads/7d4627e8-3edf-4015-98fb-da635d0451ca.png" alt="World doodle" className="w-48 md:w-64 opacity-60" />
+          <img src="/lovable-uploads/67ab1b28-3a21-4689-bf71-af6ca424c0c5.png" alt="World doodle" className="w-48 md:w-64 opacity-60" />
         </div>
         
         <div className="absolute top-20 left-10 transform rotate-12">
