@@ -1,43 +1,31 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Zap, Code, FileCode } from 'lucide-react';
 import XLogo from './XLogo';
-
 const SponsorsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
-  return (
-    <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
+  return <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
       {/* Hot air balloon on the left side */}
       <div className="absolute top-40 left-20 z-10 w-40 md:w-52 xl:w-56 animate-float">
-        <img 
-          src="/lovable-uploads/096fe698-e386-40f8-a0de-26234e9a7934.png" 
-          alt="Hot Air Balloon" 
-          className="w-full h-auto transform hover:scale-110 transition-all duration-700"
-        />
+        
       </div>
       
       {/* Enhanced code snippet illustration for sponsors section */}
@@ -49,7 +37,7 @@ const SponsorsSection: React.FC = () => {
           </div>
           <pre className="text-left text-xs font-terminal bg-gradient-to-br from-green-50 via-blue-50 to-white p-2 rounded">
             <code className="code-highlight">
-{`const <span class="text-purple-500 glow-text">sponsors</span> = [
+            {`const <span class="text-purple-500 glow-text">sponsors</span> = [
   { name: "<span class="text-blue-500 glow-text">Bolt</span>", tier: "Gold" },
   { name: "<span class="text-green-500 glow-text">CodeRabbit</span>", tier: "Gold" }
 ];
@@ -75,20 +63,11 @@ const SponsorsSection: React.FC = () => {
           <div className="sponsor-card transform transition-all duration-500 hover:rotate-[-1deg]">
             <div className="relative w-52 h-52 mb-6 flex items-center justify-center overflow-hidden group">
               <div className="absolute inset-0 bg-yellow-100 rounded-full opacity-0 group-hover:opacity-30 transition-opacity"></div>
-              <img 
-                src="/lovable-uploads/5aaf8198-22eb-40ad-83e4-16ede5847963.png" 
-                alt="Bolt logo" 
-                className="w-44 object-contain transition-transform group-hover:scale-110 duration-300"
-              />
+              <img src="/lovable-uploads/5aaf8198-22eb-40ad-83e4-16ede5847963.png" alt="Bolt logo" className="w-44 object-contain transition-transform group-hover:scale-110 duration-300" />
             </div>
             
             <h3 className="font-terminal text-3xl font-bold mb-3">Bolt</h3>
-            <a 
-              href="https://twitter.com/boltdotnew"
-              target="_blank"
-              rel="noopener noreferrer" 
-              className="font-terminal text-2xl text-vibejam-blue mb-4 flex items-center justify-center gap-2 hover:text-blue-500 transition-colors"
-            >
+            <a href="https://twitter.com/boltdotnew" target="_blank" rel="noopener noreferrer" className="font-terminal text-2xl text-vibejam-blue mb-4 flex items-center justify-center gap-2 hover:text-blue-500 transition-colors">
               <XLogo className="w-5 h-5" />
               <span>@boltdotnew</span>
             </a>
@@ -98,29 +77,19 @@ const SponsorsSection: React.FC = () => {
           </div>
           
           <div className="relative w-20 h-20 flex items-center justify-center group">
-            <Zap 
-              className="w-12 h-12 text-amber-300 group-hover:text-amber-400 group-hover:scale-125 transform transition-all duration-300 animate-pulse" 
-              style={{ filter: "drop-shadow(0px 0px 8px rgba(251, 191, 36, 0.5))" }}
-            />
+            <Zap className="w-12 h-12 text-amber-300 group-hover:text-amber-400 group-hover:scale-125 transform transition-all duration-300 animate-pulse" style={{
+            filter: "drop-shadow(0px 0px 8px rgba(251, 191, 36, 0.5))"
+          }} />
           </div>
           
           <div className="sponsor-card transform transition-all duration-500 hover:rotate-[1deg]">
             <div className="relative w-52 h-52 mb-6 flex items-center justify-center overflow-hidden group">
               <div className="absolute inset-0 bg-blue-100 rounded-full opacity-0 group-hover:opacity-30 transition-opacity"></div>
-              <img 
-                src="/lovable-uploads/83ec83f8-5813-42dc-a04f-10f85538b807.png" 
-                alt="Code Rabbit logo" 
-                className="w-44 h-44 object-contain transition-transform group-hover:scale-110 duration-300"
-              />
+              <img src="/lovable-uploads/83ec83f8-5813-42dc-a04f-10f85538b807.png" alt="Code Rabbit logo" className="w-44 h-44 object-contain transition-transform group-hover:scale-110 duration-300" />
             </div>
             
             <h3 className="font-terminal text-3xl font-bold mb-3">Code Rabbit</h3>
-            <a 
-              href="https://twitter.com/coderabbitai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-terminal text-2xl text-vibejam-blue mb-4 flex items-center justify-center gap-2 hover:text-blue-500 transition-colors"
-            >
+            <a href="https://twitter.com/coderabbitai" target="_blank" rel="noopener noreferrer" className="font-terminal text-2xl text-vibejam-blue mb-4 flex items-center justify-center gap-2 hover:text-blue-500 transition-colors">
               <XLogo className="w-5 h-5" />
               <span>@coderabbitai</span>
             </a>
@@ -130,8 +99,6 @@ const SponsorsSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SponsorsSection;

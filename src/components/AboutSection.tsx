@@ -1,10 +1,7 @@
-
 import React, { useEffect, useRef } from 'react';
 import { PenTool, Gamepad2, Sparkles, Terminal, Braces, Code, ArrowRight } from 'lucide-react';
-
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -15,18 +12,15 @@ const AboutSection: React.FC = () => {
     }, {
       threshold: 0.1
     });
-    
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
   return <section id="about" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-white"></div>
       
@@ -37,11 +31,13 @@ const AboutSection: React.FC = () => {
       
       {/* Arcade machine illustration - REPOSITIONED */}
       <div className="absolute top-28 right-[25%] z-10 w-36 md:w-48 xl:w-56 animate-float">
-        <img src="/lovable-uploads/4109ca1d-8ac0-44b2-93de-af04242e008b.png" alt="Arcade Machine" className="w-full h-auto hover:scale-110 transition-all duration-500" />
+        
       </div>
       
       {/* Mini code snippets scattered around - MADE BIGGER */}
-      <div className="absolute top-40 left-20 z-10 code-snippet-mini animate-float-element" style={{ animationDelay: "1.3s" }}>
+      <div className="absolute top-40 left-20 z-10 code-snippet-mini animate-float-element" style={{
+      animationDelay: "1.3s"
+    }}>
         <div className="bg-white border border-black rounded p-2 transform rotate-[-3deg] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:rotate-[-1deg]">
           <div className="flex items-center mb-1 bg-gradient-to-r from-pink-50 to-purple-50 p-1 rounded-t">
             <Code size={14} className="mr-1 text-pink-500" />
@@ -60,7 +56,9 @@ const AboutSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-44 right-28 z-10 code-snippet-mini animate-float-element" style={{ animationDelay: "2.7s" }}>
+      <div className="absolute bottom-44 right-28 z-10 code-snippet-mini animate-float-element" style={{
+      animationDelay: "2.7s"
+    }}>
         <div className="bg-white border border-black rounded p-2 transform rotate-[2deg] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:rotate-[4deg]">
           <div className="flex items-center mb-1 bg-gradient-to-r from-blue-50 to-cyan-50 p-1 rounded-t">
             <Terminal size={14} className="mr-1 text-blue-500" />
@@ -79,7 +77,9 @@ updateUI(score);`}
         </div>
       </div>
       
-      <div className="absolute top-64 right-48 z-10 code-snippet-mini animate-float-element" style={{ animationDelay: "3.5s" }}>
+      <div className="absolute top-64 right-48 z-10 code-snippet-mini animate-float-element" style={{
+      animationDelay: "3.5s"
+    }}>
         <div className="bg-white border border-black rounded p-2 transform rotate-[-5deg] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:rotate-[-3deg]">
           <div className="flex items-center mb-1 bg-gradient-to-r from-amber-50 to-yellow-50 p-1 rounded-t">
             <ArrowRight size={14} className="mr-1 text-amber-500" />
@@ -156,5 +156,4 @@ updateUI(score);`}
       </div>
     </section>;
 };
-
 export default AboutSection;
