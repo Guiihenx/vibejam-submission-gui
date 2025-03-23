@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Star, Sparkles, Code, Terminal, GamepadIcon, Joystick, TerminalSquare, CodeSquare, Bug, Braces, MonitorPlay, GitCompare, FileCode } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -52,8 +51,8 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      {/* Rocket illustration in bottom right - REPOSITIONED and BIGGER */}
-      <div className="absolute bottom-40 right-1/2 z-10 w-40 h-40 md:w-56 md:h-56 animate-rocket">
+      {/* Rocket illustration - REPOSITIONED more to the right and BIGGER */}
+      <div className="absolute bottom-40 right-[30%] z-10 w-48 h-48 md:w-64 md:h-64 animate-rocket">
         <img 
           src="/lovable-uploads/8e247c81-02ed-4e0b-92fd-109966cb082c.png" 
           alt="Rocket" 
