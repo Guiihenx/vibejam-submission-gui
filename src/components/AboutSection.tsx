@@ -85,15 +85,9 @@ const AboutSection: React.FC = () => {
         </div>
         
         <div className="mt-20 text-center relative">
-          {/* UFO illustration removed */}
-          
-          <div className="vibejam-tag inline-block px-6 py-3 rounded-full border-2 border-black font-handwritten text-2xl font-bold mb-6 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-sky-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <span className="relative z-10 flex items-center justify-center">
-              <Braces className="w-5 h-5 mr-2 text-indigo-500 group-hover:animate-spin-slow" />
-              <span className="code-text">#vibejam</span>
-            </span>
-            <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-full bg-blue-100 -z-10 opacity-0 group-hover:opacity-100 transition-all duration-500 code-ping"></div>
+          <div className="vibejam-tag inline-block px-6 py-3 rounded-full font-terminal text-2xl font-bold mb-6 relative overflow-hidden group">
+            <Braces className="w-5 h-5 mr-2 text-indigo-500" />
+            <span className="code-text">#vibejam</span>
           </div>
           
           <p className="doodle-text max-w-2xl mx-auto">

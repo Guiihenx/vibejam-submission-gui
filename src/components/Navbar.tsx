@@ -31,20 +31,20 @@ const Navbar: React.FC = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="font-mono text-xl md:text-2xl flex items-center">
+        <div className="font-terminal text-xl md:text-2xl flex items-center">
           <Joystick className="w-5 h-5 mr-2 text-indigo-600" />
           <span className="doodle-highlight">#vibejam</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="font-mono text-lg hover:underline transition-all duration-300 hover:text-indigo-600">About</a>
-          <a href="#jury" className="font-mono text-lg hover:underline transition-all duration-300 hover:text-indigo-600">Jury</a>
-          <a href="#sponsors" className="font-mono text-lg hover:underline transition-all duration-300 hover:text-indigo-600">Sponsors</a>
+          <a href="#about" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600">About</a>
+          <a href="#jury" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600">Jury</a>
+          <a href="#sponsors" className="font-terminal text-lg hover:underline transition-all duration-300 hover:text-indigo-600">Sponsors</a>
           <Button 
             asChild
             variant="submit"
             size="sm"
-            className="px-4 py-2 text-sm font-mono"
+            className="px-4 py-2 text-sm font-terminal"
           >
             <a 
               href="http://jam.pieter.com" 

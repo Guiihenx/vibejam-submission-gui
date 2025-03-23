@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,11 +19,12 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Quicksand', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+				sans: ['Space Mono', 'JetBrains Mono', 'monospace'],
 				handwritten: ['Architects Daughter', 'cursive'],
-				display: ['Architects Daughter', 'cursive'],
+				display: ['Fira Code', 'monospace'],
 				mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-				code: ['JetBrains Mono', 'Fira Code', 'monospace'],
+				code: ['Fira Code', 'JetBrains Mono', 'monospace'],
+				terminal: ['JetBrains Mono', 'Fira Code', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -153,6 +153,18 @@ export default {
 					'25%': { transform: 'translateX(5px)' },
 					'75%': { transform: 'translateX(-5px)' },
 					'100%': { transform: 'translateX(0)' }
+				},
+				'terminal-blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
+				},
+				'terminal-type': {
+					'0%': { width: '0%' },
+					'100%': { width: '100%' }
+				},
+				'terminal-glow': {
+					'0%, 100%': { textShadow: '0 0 5px currentColor' },
+					'50%': { textShadow: '0 0 15px currentColor, 0 0 5px currentColor' }
 				}
 			},
 			animation: {
@@ -171,7 +183,10 @@ export default {
 				'float-element': 'float-element 8s ease-in-out infinite',
 				'spin-slow': 'spin-slow 20s linear infinite',
 				'bounce-light': 'bounce-light 4s ease-in-out infinite',
-				'squiggle': 'squiggle 2s ease-in-out infinite'
+				'squiggle': 'squiggle 2s ease-in-out infinite',
+				'terminal-blink': 'terminal-blink 1s step-end infinite',
+				'terminal-type': 'terminal-type 2s steps(40, end)',
+				'terminal-glow': 'terminal-glow 2s ease-in-out infinite',
 			},
 			backdropFilter: {
 				'none': 'none',

@@ -58,16 +58,16 @@ const Hero: React.FC = () => {
           <Bug size={35} className="text-purple-200" />
         </div>
         
-        {/* Enhanced code snippet illustration with improved hover effects */}
+        {/* Enhanced code snippet illustration with improved hover effects - repositioned */}
         <div className="absolute bottom-[15%] left-[8%] z-0 opacity-90 code-snippet-card animate-float-slow">
           <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-[-3deg]" style={{
             maxWidth: "280px"
           }}>
             <div className="flex items-center mb-1 bg-gradient-to-r from-indigo-50 to-sky-50 p-2 rounded-t border-b border-gray-200">
               <Code size={16} className="mr-2 text-indigo-500 animate-pulse-light" />
-              <span className="font-mono text-xs text-indigo-700">game.js</span>
+              <span className="font-terminal text-xs text-indigo-700">game.js</span>
             </div>
-            <pre className="text-left text-xs font-mono bg-gradient-to-br from-violet-50 via-sky-50 to-white p-3 rounded">
+            <pre className="text-left text-xs font-terminal bg-gradient-to-br from-violet-50 via-sky-50 to-white p-3 rounded">
               <code className="code-highlight">
               {`function <span class="text-pink-500 glow-text">vibeCode</span>() {
   const <span class="text-green-500 glow-text">game</span> = new Game();
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Enhanced 2025 button with code theme */}
           <div className="inline-block mb-8 code-year-badge">
-            <div className="font-mono border-2 border-black rounded-full px-3 py-1.5 bg-gradient-to-r from-indigo-50 via-sky-50 to-white shadow-md relative overflow-hidden group hover:shadow-lg transition-all duration-300">
+            <div className="font-terminal border-2 border-black rounded-full px-3 py-1.5 bg-gradient-to-r from-indigo-50 via-sky-50 to-white shadow-md relative overflow-hidden group hover:shadow-lg transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-sky-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex items-center space-x-2">
                 <Terminal size={16} className="text-sky-500 code-spin-slow" />
@@ -98,12 +98,12 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
-          <h1 className="font-mono font-bold mb-10 leading-tight tracking-tight text-4xl md:text-6xl">
+          <h1 className="font-terminal font-bold mb-10 leading-tight tracking-tight text-4xl md:text-6xl">
             <Code className="w-8 h-8 inline-block mr-3 text-indigo-500" />
             Vibe <span className="doodle-highlight-hover">Coding</span> Game Jam
           </h1>
           
-          <p className="font-mono text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-slate-700">
+          <p className="font-terminal text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-slate-700">
             The first game jam for AI <span className="doodle-highlight-green">vibecoded</span> games.
             Create, innovate, and push boundaries.
           </p>
@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
               asChild 
               variant="submit" 
               size="lg" 
-              className="py-6 px-10 text-xl font-mono group"
+              className="py-6 px-10 text-xl font-terminal group"
             >
               <a href="http://jam.pieter.com" target="_blank" rel="noopener noreferrer">
                 Submit Your Entry
@@ -126,7 +126,7 @@ const Hero: React.FC = () => {
       
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-float">
-        <span className="font-mono text-xl mb-2 opacity-70">Scroll to explore</span>
+        <span className="font-terminal text-xl mb-2 opacity-70">Scroll to explore</span>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="hand-drawn-arrow">
           <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
