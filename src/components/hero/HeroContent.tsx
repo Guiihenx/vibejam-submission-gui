@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
-import { Code, Sparkles } from 'lucide-react';
+import { Code, Sparkles, GamepadIcon } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import YearBadge from './YearBadge';
 import DeadlineBadge from './DeadlineBadge';
@@ -49,7 +49,7 @@ const HeroContent: React.FC = () => {
           <Button asChild variant="submit" size="lg" className="py-6 px-10 text-xl font-terminal group">
             <a href="http://jam.pieter.com" target="_blank" rel="noopener noreferrer">
               Submit Your Entry
-              <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
+              <GamepadIcon className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
             </a>
           </Button>
         </div>

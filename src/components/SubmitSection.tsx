@@ -1,7 +1,8 @@
 
 import React, { useEffect, useRef } from 'react';
-import { CodeSquare, FileCode, Sparkles, Code } from 'lucide-react';
+import { CodeSquare, FileCode, Sparkles, Code, GamepadIcon, Joystick, TerminalSquare, Bug, Github } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import FloatingIcons from './hero/FloatingIcons';
 
 const SubmitSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -32,6 +33,9 @@ const SubmitSection: React.FC = () => {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-sky-50"></div>
+      
+      {/* Add FloatingIcons component */}
+      <FloatingIcons />
       
       {/* Ship illustration with enhanced float animation */}
       <div className="absolute bottom-10 left-10 z-0 pointer-events-none animate-float-element">
@@ -91,7 +95,7 @@ const SubmitSection: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 Submit Your Entry Now
-                <CodeSquare className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
+                <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
               </a>
             </Button>
           </div>

@@ -7,14 +7,18 @@
   body {
     @apply bg-vibejam-white text-vibejam-black antialiased font-terminal;
     font-feature-settings: "rlig" 1, "calt" 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
   }
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {

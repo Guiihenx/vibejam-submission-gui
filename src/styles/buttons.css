@@ -33,11 +33,11 @@
 
 /* Updated Submit button styles */
 .submit-button-gradient {
-  @apply bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-terminal border-2 border-black rounded-md transition-all duration-300;
+  @apply bg-gradient-to-r from-pink-300 to-purple-300 text-white font-terminal border-2 border-black rounded-md transition-all duration-300;
   box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
 }
 
 .submit-button-gradient:hover {
-  @apply from-indigo-600 to-blue-600 -translate-y-1;
+  @apply from-pink-400 to-purple-400 -translate-y-1;
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 }
