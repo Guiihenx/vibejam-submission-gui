@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       {/* Decorative elements - rearranged */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* World map moved above hero content, with rotation */}
+        {/* World map ABOVE hero content */}
         <div className="absolute top-10 left-1/2 -translate-x-1/2 opacity-15 pointer-events-none z-0">
           <img 
             src="/lovable-uploads/dff31447-dfa0-4a8d-993b-10b447722f5d.png" 
@@ -52,23 +52,22 @@ const Hero: React.FC = () => {
           <Sparkles size={60} className="text-gray-200" />
         </div>
 
-        {/* Flying illustrations - rearranged */}
-        {/* Kept Jet in bottom right, removed spinning animation */}
-        <div className="flying-element bottom-[10%] right-[10%] animate-float-element" style={{ animationDelay: "1s" }}>
+        {/* Jet in right side, NO animation */}
+        <div className="flying-element bottom-[20%] right-[15%]" style={{ opacity: "0.7" }}>
           <img src="/lovable-uploads/f065e4f2-ee16-4fee-b4ba-b9aa68354fc0.png" alt="Jet doodle" className="max-h-32" />
         </div>
         
-        {/* UFO kept in similar position, people like it */}
+        {/* UFO kept in similar position */}
         <div className="flying-element top-[70%] right-[8%] animate-bounce-light">
           <img src="/lovable-uploads/ebb5d507-5505-4561-895b-9d616a67c6e1.png" alt="UFO doodle" />
         </div>
         
-        {/* Code snippet illustration with pastel colors and animation */}
-        <div className="absolute bottom-[20%] left-[10%] z-0 opacity-80 code-snippet-card">
-          <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-5deg] shadow-md">
-            <div className="flex items-center mb-2">
-              <Code size={18} className="mr-2" />
-              <span className="font-handwritten text-sm">game.js</span>
+        {/* Code snippet illustration with pastel colors and smaller size */}
+        <div className="absolute bottom-[15%] left-[8%] z-0 opacity-80 code-snippet-card">
+          <div className="bg-white border-2 border-black rounded-lg p-2 transform rotate-[-5deg] shadow-md" style={{ maxWidth: "240px" }}>
+            <div className="flex items-center mb-1">
+              <Code size={16} className="mr-2" />
+              <span className="font-handwritten text-xs">game.js</span>
             </div>
             <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
               <code>
@@ -76,7 +75,7 @@ const Hero: React.FC = () => {
   const <span class="text-green-500">game</span> = new Game();
   <span class="text-green-500">game</span>.createWorld();
   <span class="text-green-500">game</span>.addPlayer();
-  return <span class="text-green-500">game</span>.<span class="text-pink-500">start</span>();
+  return <span class="text-pink-500">game</span>.<span class="text-indigo-500">start</span>();
 }`}
               </code>
             </pre>
@@ -107,7 +106,7 @@ const Hero: React.FC = () => {
               className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
             >
               Submit Your Entry
-              <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              <Sparkles className="inline-block ml-2 w-5 h-5" />
             </a>
             
             <VibeButton />

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { PenLine, Code } from 'lucide-react';
+import { PenLine, Code, ArrowRight } from 'lucide-react';
 
 const SubmitSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -38,16 +38,16 @@ const SubmitSection: React.FC = () => {
           src="/lovable-uploads/8553bec3-ce97-4fba-9542-9b5285e5a459.png" 
           alt="Ship doodle" 
           className="w-32 md:w-40 animate-float-element"
-          style={{ animationDelay: "1s" }}
+          style={{ animationDelay: "1s", opacity: "0.7" }}
         />
       </div>
       
-      {/* Code snippet for submit section with animation and pastel colors */}
-      <div className="absolute top-20 right-20 z-0 opacity-80 code-snippet-card">
-        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md">
+      {/* Code snippet for submit section with animation and pastel colors - REPOSITIONED */}
+      <div className="absolute top-[40%] right-20 z-0 opacity-80 code-snippet-card">
+        <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md" style={{ maxWidth: "240px" }}>
           <div className="flex items-center mb-2">
-            <Code size={18} className="mr-2" />
-            <span className="font-handwritten text-sm">submit.js</span>
+            <Code size={16} className="mr-2" />
+            <span className="font-handwritten text-xs">submit.js</span>
           </div>
           <pre className="text-left text-xs font-mono bg-gray-100 p-2 rounded">
             <code>
@@ -85,7 +85,7 @@ const SubmitSection: React.FC = () => {
               className="doodle-button text-2xl group bg-gradient-to-r from-sky-100 to-white hover:from-sky-200 hover:to-sky-50"
             >
               Submit Your Entry Now
-              <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>

@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
-import { Pencil, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Sparkles, ZapIcon } from 'lucide-react';
 
 const VibeButton: React.FC = () => {
   const [isVibrating, setIsVibrating] = useState(false);
@@ -10,35 +10,44 @@ const VibeButton: React.FC = () => {
     setIsVibrating(true);
     setIsGlowing(true);
     
-    // Create ripple effect with multiple circles
+    // Create starburst effect
     const button = document.querySelector('.vibe-button');
     if (button) {
-      for (let i = 0; i < 5; i++) {
-        const ripple = document.createElement('span');
-        ripple.classList.add('ripple-effect');
-        ripple.style.animationDelay = `${i * 100}ms`;
-        button.appendChild(ripple);
+      // Create colorful starburst particles
+      for (let i = 0; i < 16; i++) {
+        const particle = document.createElement('span');
+        particle.classList.add('starburst-particle');
         
-        // Remove ripple after animation
+        // Set random pastel colors
+        const colors = ['#FFDEE2', '#D3E4FD', '#FDE1D3', '#E5DEFF', '#F2FCE2'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.background = randomColor;
+        
+        // Position particles in a circle around the button
+        const angle = (i / 16) * 2 * Math.PI;
+        const distance = 40 + Math.random() * 30;
+        particle.style.left = `calc(50% + ${Math.cos(angle) * distance}px)`;
+        particle.style.top = `calc(50% + ${Math.sin(angle) * distance}px)`;
+        
+        // Set random animation delays
+        particle.style.animationDelay = `${i * 30}ms`;
+        button.appendChild(particle);
+        
+        // Remove particle after animation
         setTimeout(() => {
-          ripple.remove();
+          particle.remove();
         }, 1000);
       }
       
-      // Add sparkle burst effect
-      for (let i = 0; i < 12; i++) {
-        const sparkle = document.createElement('span');
-        sparkle.classList.add('sparkle-burst');
-        sparkle.style.left = `${50 + 30 * Math.cos(i * Math.PI / 6)}%`;
-        sparkle.style.top = `${50 + 30 * Math.sin(i * Math.PI / 6)}%`;
-        sparkle.style.animationDelay = `${i * 50}ms`;
-        button.appendChild(sparkle);
-        
-        // Remove sparkle after animation
-        setTimeout(() => {
-          sparkle.remove();
-        }, 1000);
-      }
+      // Add a wave ripple effect
+      const ripple = document.createElement('span');
+      ripple.classList.add('wave-ripple');
+      button.appendChild(ripple);
+      
+      // Remove ripple after animation
+      setTimeout(() => {
+        ripple.remove();
+      }, 1000);
     }
     
     // Reset vibration after animation completes
@@ -52,27 +61,6 @@ const VibeButton: React.FC = () => {
     }, 1500);
   };
   
-  useEffect(() => {
-    // Add sparkle animation
-    const interval = setInterval(() => {
-      const button = document.querySelector('.vibe-button');
-      if (button) {
-        const sparkle = document.createElement('span');
-        sparkle.classList.add('sparkle');
-        sparkle.style.left = `${Math.random() * 100}%`;
-        sparkle.style.top = `${Math.random() * 100}%`;
-        button.appendChild(sparkle);
-        
-        // Remove sparkle after animation
-        setTimeout(() => {
-          sparkle.remove();
-        }, 1000);
-      }
-    }, 2000);
-    
-    return () => clearInterval(interval);
-  }, []);
-  
   return (
     <button
       onClick={handleVibrate}
@@ -83,9 +71,9 @@ const VibeButton: React.FC = () => {
       } bg-gradient-to-r from-sky-50 to-white hover:from-sky-100 hover:to-white`}
       aria-label="Click to vibrate"
     >
-      <Pencil className="w-5 h-5" />
+      <ZapIcon className="w-5 h-5 text-yellow-400" />
       <span>Feel the vibe</span>
-      <Sparkles className={`absolute top-0 right-0 w-6 h-6 text-yellow-400 transition-opacity ${isGlowing ? 'opacity-100' : 'opacity-0'}`} />
+      <Sparkles className={`w-5 h-5 text-yellow-400 transition-all ${isGlowing ? 'animate-pulse-light' : 'opacity-70'}`} />
     </button>
   );
 };
