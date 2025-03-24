@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { Code, FileCode, GamepadIcon, Dice1, Joystick, Target, Puzzle, Cpu } from 'lucide-react';
 import XLogo from './XLogo';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 type JuryMember = {
   handle: string;
@@ -52,6 +53,7 @@ const juryMembers: JuryMember[] = [
 
 const JurySection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -80,8 +82,8 @@ const JurySection: React.FC = () => {
     <section id="jury" className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-vibejam-gray"></div>
       
-      {/* Airplane decoration - ENLARGED and REPOSITIONED */}
-      <div className="absolute top-1/3 right-[5%] z-10 w-48 md:w-72 animate-plane">
+      {/* Airplane decoration - optimized for mobile */}
+      <div className={`absolute ${isMobile ? 'top-1/3 right-0 w-24 opacity-40 -z-5' : 'top-1/3 right-[5%] z-10 w-48 md:w-72'} animate-plane`}>
         <img 
           src="/lovable-uploads/3bda189a-ea9f-43b3-8140-3af1c8ae92cb.png" 
           alt="Airplane" 
@@ -89,8 +91,8 @@ const JurySection: React.FC = () => {
         />
       </div>
       
-      {/* Enhanced code snippet illustration for jury section - repositioned */}
-      <div className="absolute top-40 left-20 z-0 opacity-90 code-snippet-card animate-float-slow">
+      {/* Enhanced code snippet illustration for jury section - optimized for mobile */}
+      <div className={`absolute ${isMobile ? 'top-10 left-0 scale-50 opacity-30 -z-5' : 'top-40 left-20 z-0 opacity-90'} code-snippet-card animate-float-slow`}>
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-lg hover:shadow-xl transition-all duration-500">
           <div className="flex items-center mb-2 bg-gradient-to-r from-violet-50 to-indigo-50 p-2 rounded-t border-b border-gray-200">
             <Code size={18} className="mr-2 text-violet-500 animate-pulse-light" />
@@ -109,7 +111,7 @@ const JurySection: React.FC = () => {
         </div>
       </div>
       
-      <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate">
+      <div ref={sectionRef} className="container mx-auto max-w-6xl section-animate relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-terminal text-5xl md:text-6xl font-bold mb-6">
             <FileCode className="w-8 h-8 inline-block mr-3 text-violet-500" />

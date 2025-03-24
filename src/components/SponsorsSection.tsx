@@ -2,8 +2,12 @@
 import React, { useEffect, useRef } from 'react';
 import { Zap, Code, FileCode, Award, Trophy, Star, Sparkles, BadgeCheck, Rocket } from 'lucide-react';
 import XLogo from './XLogo';
+import { useIsMobile } from '@/hooks/use-mobile';
+
 const SponsorsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -14,30 +18,29 @@ const SponsorsSection: React.FC = () => {
     }, {
       threshold: 0.1
     });
+    
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-  return <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
-      {/* Hot air balloon on the left side */}
-      <div className="absolute top-40 left-20 z-10 w-40 md:w-52 xl:w-56 animate-float">
-        
-      </div>
-      
-      {/* Arcade machine repositioned and enhanced animation */}
-      <div className="absolute top-1/4 left-[10%] z-10 w-32 md:w-40 lg:w-44 animate-float" style={{
-      animationDelay: "2s"
-    }}>
+
+  return (
+    <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
+      {/* Arcade machine with responsive positioning */}
+      <div className={`absolute ${isMobile ? 'top-1/4 left-0 w-20 scale-75 opacity-40' : 'top-1/4 left-[10%] w-32 md:w-40 lg:w-44'} z-10 animate-float`} style={{
+        animationDelay: "2s"
+      }}>
         <img src="/lovable-uploads/8eb10b26-7925-464d-93e9-ebaeac9db08b.png" alt="Arcade machine" className="w-full h-auto object-contain transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-110" />
       </div>
       
-      {/* Enhanced code snippet illustration for sponsors section */}
-      <div className="absolute top-40 right-20 z-0 opacity-90 code-snippet-card animate-float-slow">
+      {/* Enhanced code snippet illustration for sponsors section - repositioned for mobile */}
+      <div className={`absolute ${isMobile ? 'top-12 right-0 scale-50 opacity-30 z-0' : 'top-40 right-20 z-0 opacity-90'} code-snippet-card animate-float-slow`}>
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[3deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
           <div className="flex items-center mb-2 bg-gradient-to-r from-green-50 to-blue-50 p-2 rounded-t border-b border-gray-200">
             <Code size={18} className="mr-2 text-green-500 animate-pulse-light" />
@@ -121,6 +124,8 @@ const SponsorsSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default SponsorsSection;

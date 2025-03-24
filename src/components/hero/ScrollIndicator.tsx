@@ -8,7 +8,7 @@ const ScrollIndicator: React.FC = () => {
   
   return (
     <div className="absolute bottom-8 flex flex-col items-center justify-center animate-float mx-auto left-0 right-0">
-      <div className="flex items-center gap-2 mb-3">
+      <div className="flex items-center justify-center gap-2 mb-3">
         <Sparkles size={isMobile ? 14 : 16} className="text-indigo-400 animate-pulse" />
         <span className="font-terminal text-base md:text-xl opacity-90 font-semibold">Scroll to explore</span>
         <Sparkles size={isMobile ? 14 : 16} className="text-pink-400 animate-pulse" />

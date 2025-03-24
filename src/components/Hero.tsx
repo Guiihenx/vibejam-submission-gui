@@ -32,13 +32,36 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
-      {!isMobile && <GamepadAnimation />}
-      {!isMobile && <RocketAnimation />}
-      {!isMobile && <ComputerAnimation />}
+      {/* Show in mobile but at different sizes/positions */}
+      <GamepadAnimation />
+      <RocketAnimation />
+      <ComputerAnimation />
       
       <FloatingIcons />
       
-      {!isMobile && (
+      {/* Code snippets on larger screens and custom for mobile */}
+      {isMobile ? (
+        <>
+          <CodeSnippet 
+            position="bottom-20 left-1 opacity-40"
+            title="game.js"
+            icon="code"
+            gradient="from-indigo-50 to-sky-50"
+            code={gameCodeSnippet}
+            className="scale-[0.6] animate-float max-w-[150px] z-0"
+          />
+          
+          <CodeSnippet 
+            position="top-20 right-1 opacity-40"
+            title="ai.js"
+            icon="terminal"
+            gradient="from-pink-50 to-purple-50"
+            code={aiCodeSnippet}
+            delay="1.5s"
+            className="scale-[0.6] animate-float max-w-[150px] z-0"
+          />
+        </>
+      ) : (
         <>
           <CodeSnippet 
             position="bottom-[30%] left-[8%]"

@@ -3,9 +3,11 @@ import React, { useEffect, useRef } from 'react';
 import { CodeSquare, FileCode, Sparkles, Code, GamepadIcon, Joystick, TerminalSquare, Bug, Github } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import FloatingIcons from './hero/FloatingIcons';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const SubmitSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,18 +39,18 @@ const SubmitSection: React.FC = () => {
       {/* Add FloatingIcons component */}
       <FloatingIcons />
       
-      {/* Ship illustration with enhanced float animation */}
-      <div className="absolute bottom-10 left-10 z-0 pointer-events-none animate-float-element">
+      {/* Ship illustration with enhanced float animation - optimized for mobile */}
+      <div className={`absolute ${isMobile ? 'bottom-4 left-0 w-20 opacity-40 -z-5' : 'bottom-10 left-10 z-0 w-32 md:w-40'} pointer-events-none animate-float-element`}>
         <img 
           src="/lovable-uploads/8553bec3-ce97-4fba-9542-9b5285e5a459.png" 
           alt="Ship doodle" 
-          className="w-32 md:w-40"
-          style={{ opacity: "0.7" }}
+          className="w-full"
+          style={{ opacity: isMobile ? "0.5" : "0.7" }}
         />
       </div>
       
-      {/* Code snippet for submit section with animation and pastel colors - REPOSITIONED */}
-      <div className="absolute top-[20%] right-20 z-0 opacity-80 code-snippet-card animate-float-slow">
+      {/* Code snippet for submit section - optimized for mobile */}
+      <div className={`absolute ${isMobile ? 'top-[10%] right-0 scale-50 opacity-30 -z-5' : 'top-[20%] right-20 z-0 opacity-80'} code-snippet-card animate-float-slow`}>
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-[3deg]" style={{ maxWidth: "240px" }}>
           <div className="flex items-center mb-2">
             <Code size={16} className="mr-2" />
@@ -86,8 +88,8 @@ const SubmitSection: React.FC = () => {
             <Button 
               asChild
               variant="submit"
-              size="lg"
-              className="py-6 px-10 text-xl font-terminal group"
+              size={isMobile ? "default" : "lg"}
+              className={`py-4 ${isMobile ? 'px-6 text-lg' : 'py-6 px-10 text-xl'} font-terminal group mb-6`}
             >
               <a 
                 href="http://jam.pieter.com" 
