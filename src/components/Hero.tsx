@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 import FloatingIcons from './hero/FloatingIcons';
 import GamepadAnimation from './hero/GamepadAnimation';
 import RocketAnimation from './hero/RocketAnimation';
@@ -9,6 +10,8 @@ import ScrollIndicator from './hero/ScrollIndicator';
 import ComputerAnimation from './hero/ComputerAnimation';
 
 const Hero: React.FC = () => {
+  const isMobile = useIsMobile();
+  
   const gameCodeSnippet = `function <span class="text-pink-500 glow-text">vibeCode</span>() {
   const <span class="text-green-500 glow-text">game</span> = new Game();
   <span class="text-green-500 glow-text">game</span>.createWorld();
@@ -29,30 +32,34 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
-      <GamepadAnimation />
-      <RocketAnimation />
-      <ComputerAnimation />
+      {!isMobile && <GamepadAnimation />}
+      {!isMobile && <RocketAnimation />}
+      {!isMobile && <ComputerAnimation />}
       
       <FloatingIcons />
       
-      <CodeSnippet 
-        position="bottom-[30%] left-[8%]"
-        title="game.js"
-        icon="code"
-        gradient="from-indigo-50 to-sky-50"
-        code={gameCodeSnippet}
-        className="animate-float"
-      />
-      
-      <CodeSnippet 
-        position="top-[30%] right-[8%]"
-        title="ai.js"
-        icon="terminal"
-        gradient="from-pink-50 to-purple-50"
-        code={aiCodeSnippet}
-        delay="1.5s"
-        className="animate-float"
-      />
+      {!isMobile && (
+        <>
+          <CodeSnippet 
+            position="bottom-[30%] left-[8%]"
+            title="game.js"
+            icon="code"
+            gradient="from-indigo-50 to-sky-50"
+            code={gameCodeSnippet}
+            className="animate-float"
+          />
+          
+          <CodeSnippet 
+            position="top-[30%] right-[8%]"
+            title="ai.js"
+            icon="terminal"
+            gradient="from-pink-50 to-purple-50"
+            code={aiCodeSnippet}
+            delay="1.5s"
+            className="animate-float"
+          />
+        </>
+      )}
       
       <HeroContent />
       

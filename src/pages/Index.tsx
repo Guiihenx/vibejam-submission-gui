@@ -19,9 +19,15 @@ const Index = () => {
         if (targetId && targetId !== '#') {
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
+            // Add offset for mobile to account for the header
+            const isMobile = window.innerWidth < 768;
+            const offset = isMobile ? -80 : -20;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset + offset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
             });
           }
         }
