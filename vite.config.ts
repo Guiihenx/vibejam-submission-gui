@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     sourcemap: true,
     chunkSizeWarningLimit: 1000,
+    outDir: "dist",
   },
   optimizeDeps: {
     include: [
