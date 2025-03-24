@@ -31,9 +31,14 @@ const Navbar: React.FC = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="font-terminal text-xl md:text-2xl flex items-center">
-          <Joystick className="w-5 h-5 mr-2 text-indigo-600" />
-          <span className="doodle-highlight">#vibejam</span>
+        <div className="font-terminal text-xl md:text-2xl flex items-center group">
+          <Joystick className="w-6 h-6 mr-2 text-indigo-600 group-hover:text-pink-500 transition-colors duration-300 animate-pulse" />
+          <div className="relative">
+            <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent font-bold">#vibejam</span>
+            <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full bg-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
