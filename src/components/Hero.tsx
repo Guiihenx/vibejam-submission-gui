@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
       />
       
       <CodeSnippet 
-        position="top-[35%] right-[8%]"
+        position="top-[30%] right-[8%]"
         title="ai.js"
         icon="terminal"
         gradient="from-pink-50 to-purple-50"

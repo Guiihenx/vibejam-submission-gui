@@ -1,13 +1,23 @@
 
 import React from 'react';
+import { ChevronDown, Sparkles, MousePointer } from 'lucide-react';
 
 const ScrollIndicator: React.FC = () => {
   return (
     <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-float">
-      <span className="font-terminal text-xl mb-2 opacity-70">Scroll to explore</span>
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="hand-drawn-arrow">
-        <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
+      <div className="flex items-center gap-2 mb-3">
+        <Sparkles size={16} className="text-indigo-400 animate-pulse" />
+        <span className="font-terminal text-xl opacity-80 font-semibold">Scroll to explore</span>
+        <Sparkles size={16} className="text-pink-400 animate-pulse" />
+      </div>
+      
+      <div className="relative flex flex-col items-center">
+        <MousePointer size={18} className="mb-1 text-indigo-500" />
+        <div className="w-6 h-10 border-2 border-black rounded-full flex items-start justify-center p-1 mb-2">
+          <div className="w-2 h-2 bg-black rounded-full animate-bounce" />
+        </div>
+        <ChevronDown size={24} className="text-black animate-bounce" />
+      </div>
     </div>
   );
 };
