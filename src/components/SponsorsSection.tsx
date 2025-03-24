@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Zap, Code, FileCode, Award, Trophy, Star, Sparkles, BadgeCheck, Rocket } from 'lucide-react';
 import XLogo from './XLogo';
@@ -28,11 +29,11 @@ const SponsorsSection: React.FC = () => {
         
       </div>
       
-      {/* Arcade machine on left side */}
-      <div className="absolute top-1/4 left-10 z-10 w-32 md:w-40 lg:w-44 animate-float-slow" style={{
+      {/* Arcade machine repositioned and enhanced animation */}
+      <div className="absolute top-1/4 left-20 z-10 w-32 md:w-40 lg:w-44 animate-float" style={{
       animationDelay: "2s"
     }}>
-        <img src="/lovable-uploads/3bcadc1a-30e6-4ad4-90d2-94bf90a7b5c7.png" alt="Arcade machine" className="w-full h-auto object-contain transform rotate-[-5deg] hover:rotate-0 transition-all duration-500" />
+        <img src="/lovable-uploads/3bcadc1a-30e6-4ad4-90d2-94bf90a7b5c7.png" alt="Arcade machine" className="w-full h-auto object-contain transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-110" />
       </div>
       
       {/* Enhanced code snippet illustration for sponsors section */}

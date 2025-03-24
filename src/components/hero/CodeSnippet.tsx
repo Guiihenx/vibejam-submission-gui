@@ -9,6 +9,7 @@ interface CodeSnippetProps {
   gradient: string;
   code: string;
   delay?: string;
+  className?: string;
 }
 
 const CodeSnippet: React.FC<CodeSnippetProps> = ({ 
@@ -17,10 +18,11 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({
   icon, 
   gradient, 
   code,
-  delay = "0s"
+  delay = "0s",
+  className = ""
 }) => {
   return (
-    <div className={`absolute ${position} z-0 opacity-90 code-snippet-card animate-float-slow`} style={{animationDelay: delay}}>
+    <div className={`absolute ${position} z-0 opacity-90 code-snippet-card ${className}`} style={{animationDelay: delay}}>
       <div className={`bg-white border-2 border-black rounded-lg p-2 transform ${position.includes('right') ? 'rotate-[3deg]' : 'rotate-[-5deg]'} shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:${position.includes('right') ? 'rotate-[1deg]' : 'rotate-[-3deg]'}`} style={{
         maxWidth: "280px"
       }}>

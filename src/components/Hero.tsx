@@ -6,6 +6,7 @@ import RocketAnimation from './hero/RocketAnimation';
 import CodeSnippet from './hero/CodeSnippet';
 import HeroContent from './hero/HeroContent';
 import ScrollIndicator from './hero/ScrollIndicator';
+import ComputerAnimation from './hero/ComputerAnimation';
 
 const Hero: React.FC = () => {
   const gameCodeSnippet = `function <span class="text-pink-500 glow-text">vibeCode</span>() {
@@ -30,6 +31,7 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-20">
       <GamepadAnimation />
       <RocketAnimation />
+      <ComputerAnimation />
       
       <FloatingIcons />
       
@@ -39,6 +41,7 @@ const Hero: React.FC = () => {
         icon="code"
         gradient="from-indigo-50 to-sky-50"
         code={gameCodeSnippet}
+        className="animate-float"
       />
       
       <CodeSnippet 
@@ -48,6 +51,7 @@ const Hero: React.FC = () => {
         gradient="from-pink-50 to-purple-50"
         code={aiCodeSnippet}
         delay="1.5s"
+        className="animate-float"
       />
       
       <HeroContent />
