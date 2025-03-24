@@ -43,22 +43,22 @@ const Hero: React.FC = () => {
       {isMobile ? (
         <>
           <CodeSnippet 
-            position="bottom-20 left-1 opacity-40"
+            position="bottom-32 -left-4 opacity-40"
             title="game.js"
             icon="code"
             gradient="from-indigo-50 to-sky-50"
             code={gameCodeSnippet}
-            className="scale-[0.6] animate-float max-w-[150px] z-0"
+            className="scale-[0.5] animate-float max-w-[150px] z-0"
           />
           
           <CodeSnippet 
-            position="top-20 right-1 opacity-40"
+            position="top-28 -right-4 opacity-40"
             title="ai.js"
             icon="terminal"
             gradient="from-pink-50 to-purple-50"
             code={aiCodeSnippet}
             delay="1.5s"
-            className="scale-[0.6] animate-float max-w-[150px] z-0"
+            className="scale-[0.5] animate-float max-w-[150px] z-0"
           />
         </>
       ) : (

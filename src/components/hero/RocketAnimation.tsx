@@ -6,7 +6,7 @@ const RocketAnimation: React.FC = () => {
   const isMobile = useIsMobile();
   
   return (
-    <div className={`absolute ${isMobile ? 'bottom-10 right-0 scale-[0.4] opacity-60' : 'bottom-40 right-[15%]'} z-10 w-48 h-48 md:w-64 md:h-64 animate-rocket`}>
+    <div className={`absolute ${isMobile ? 'bottom-20 right-0 scale-[0.4] opacity-70 z-0' : 'bottom-40 right-[15%]'} z-10 w-48 h-48 md:w-64 md:h-64 animate-rocket`}>
       <img 
         src="/lovable-uploads/e47af7fa-cdb0-42d1-9106-d076f6a52953.png" 
         alt="Rocket" 

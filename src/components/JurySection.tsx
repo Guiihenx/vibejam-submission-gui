@@ -92,7 +92,7 @@ const JurySection: React.FC = () => {
       </div>
       
       {/* Enhanced code snippet illustration for jury section - optimized for mobile */}
-      <div className={`absolute ${isMobile ? 'top-10 left-0 scale-50 opacity-30 -z-5' : 'top-40 left-20 z-0 opacity-90'} code-snippet-card animate-float-slow`}>
+      <div className={`absolute ${isMobile ? 'top-10 -left-6 scale-[0.4] opacity-30 -z-5' : 'top-40 left-20 z-0 opacity-90'} code-snippet-card animate-float-slow`}>
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[-3deg] shadow-lg hover:shadow-xl transition-all duration-500">
           <div className="flex items-center mb-2 bg-gradient-to-r from-violet-50 to-indigo-50 p-2 rounded-t border-b border-gray-200">
             <Code size={18} className="mr-2 text-violet-500 animate-pulse-light" />

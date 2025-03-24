@@ -7,7 +7,7 @@ const GamepadAnimation: React.FC = () => {
   const isMobile = useIsMobile();
   
   return (
-    <div className={`absolute ${isMobile ? 'top-16 -left-2 scale-[0.4] opacity-60' : 'top-20 left-1/2 transform -translate-x-1/2'} w-40 h-40 md:w-64 md:h-64 z-10`}>
+    <div className={`absolute ${isMobile ? 'top-24 left-1/2 transform -translate-x-1/2 scale-[0.6] z-20' : 'top-20 left-1/2 transform -translate-x-1/2'} w-40 h-40 md:w-64 md:h-64 z-10`}>
       <img 
         src="/lovable-uploads/3d2f00ca-8048-4211-98aa-fd3b609f94c9.png" 
         alt="Gamepad" 

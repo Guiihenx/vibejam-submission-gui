@@ -33,14 +33,14 @@ const SponsorsSection: React.FC = () => {
   return (
     <section id="sponsors" className="py-16 px-6 relative overflow-hidden bg-white">
       {/* Arcade machine with responsive positioning */}
-      <div className={`absolute ${isMobile ? 'top-1/4 left-0 w-20 scale-75 opacity-40' : 'top-1/4 left-[10%] w-32 md:w-40 lg:w-44'} z-10 animate-float`} style={{
+      <div className={`absolute ${isMobile ? 'bottom-16 left-0 w-20 scale-75 opacity-40 z-0' : 'top-1/4 left-[10%] w-32 md:w-40 lg:w-44'} z-10 animate-float`} style={{
         animationDelay: "2s"
       }}>
         <img src="/lovable-uploads/8eb10b26-7925-464d-93e9-ebaeac9db08b.png" alt="Arcade machine" className="w-full h-auto object-contain transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 hover:scale-110" />
       </div>
       
       {/* Enhanced code snippet illustration for sponsors section - repositioned for mobile */}
-      <div className={`absolute ${isMobile ? 'top-12 right-0 scale-50 opacity-30 z-0' : 'top-40 right-20 z-0 opacity-90'} code-snippet-card animate-float-slow`}>
+      <div className={`absolute ${isMobile ? 'top-8 -right-4 scale-[0.4] opacity-30 z-0' : 'top-40 right-20 z-0 opacity-90'} code-snippet-card animate-float-slow`}>
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[3deg] shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
           <div className="flex items-center mb-2 bg-gradient-to-r from-green-50 to-blue-50 p-2 rounded-t border-b border-gray-200">
             <Code size={18} className="mr-2 text-green-500 animate-pulse-light" />

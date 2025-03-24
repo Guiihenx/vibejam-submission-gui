@@ -50,7 +50,7 @@ const SubmitSection: React.FC = () => {
       </div>
       
       {/* Code snippet for submit section - optimized for mobile */}
-      <div className={`absolute ${isMobile ? 'top-[10%] right-0 scale-50 opacity-30 -z-5' : 'top-[20%] right-20 z-0 opacity-80'} code-snippet-card animate-float-slow`}>
+      <div className={`absolute ${isMobile ? 'top-[10%] right-0 scale-[0.4] opacity-30 -z-5' : 'top-[20%] right-20 z-0 opacity-80'} code-snippet-card animate-float-slow`}>
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-[3deg]" style={{ maxWidth: "240px" }}>
           <div className="flex items-center mb-2">
             <Code size={16} className="mr-2" />
@@ -85,21 +85,23 @@ const SubmitSection: React.FC = () => {
               Submit your AI-powered game and showcase your innovative approach to game development.
             </p>
             
-            <Button 
-              asChild
-              variant="submit"
-              size={isMobile ? "default" : "lg"}
-              className={`py-4 ${isMobile ? 'px-6 text-lg' : 'py-6 px-10 text-xl'} font-terminal group mb-6`}
-            >
-              <a 
-                href="http://jam.pieter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
+            <div className="flex justify-center">
+              <Button 
+                asChild
+                variant="submit"
+                size={isMobile ? "default" : "lg"}
+                className={`py-4 ${isMobile ? 'px-6 text-base w-full sm:w-auto' : 'py-6 px-10 text-xl'} font-terminal group mb-6`}
               >
-                Submit Your Entry Now
-                <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
-              </a>
-            </Button>
+                <a 
+                  href="http://jam.pieter.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Submit Your Entry Now
+                  <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
