@@ -4,7 +4,7 @@ import { ChevronDown, Sparkles, MousePointer } from 'lucide-react';
 
 const ScrollIndicator: React.FC = () => {
   return (
-    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center animate-float">
+    <div className="absolute bottom-8 flex flex-col items-center justify-center animate-float mx-auto left-0 right-0">
       <div className="flex items-center gap-2 mb-3">
         <Sparkles size={16} className="text-indigo-400 animate-pulse" />
         <span className="font-terminal text-xl opacity-90 font-semibold">Scroll to explore</span>
