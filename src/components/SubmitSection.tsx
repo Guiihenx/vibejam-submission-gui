@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { CodeSquare, FileCode, Sparkles, Code, GamepadIcon, Joystick, TerminalSquare, Bug, Github } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -36,10 +35,8 @@ const SubmitSection: React.FC = () => {
     <section className="py-24 px-6 relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-sky-50"></div>
       
-      {/* Add FloatingIcons component */}
       <FloatingIcons />
       
-      {/* Ship illustration with enhanced float animation - optimized for mobile */}
       <div className={`absolute ${isMobile ? 'bottom-4 left-0 w-20 opacity-40 -z-5' : 'bottom-10 left-10 z-0 w-32 md:w-40'} pointer-events-none animate-float-element`}>
         <img 
           src="/lovable-uploads/8553bec3-ce97-4fba-9542-9b5285e5a459.png" 
@@ -49,8 +46,7 @@ const SubmitSection: React.FC = () => {
         />
       </div>
       
-      {/* Code snippet for submit section - optimized for mobile */}
-      <div className={`absolute ${isMobile ? 'top-[10%] right-0 scale-[0.4] opacity-30 -z-5' : 'top-[20%] right-20 z-0 opacity-80'} code-snippet-card animate-float-slow`}>
+      <div className={`absolute ${isMobile ? 'top-[10%] right-2 scale-[0.3] opacity-30 -z-5' : 'top-[20%] right-20 z-0 opacity-80'} code-snippet-card animate-float-slow`}>
         <div className="bg-white border-2 border-black rounded-lg p-3 transform rotate-[5deg] shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:rotate-[3deg]" style={{ maxWidth: "240px" }}>
           <div className="flex items-center mb-2">
             <Code size={16} className="mr-2" />
@@ -90,14 +86,14 @@ const SubmitSection: React.FC = () => {
                 asChild
                 variant="submit"
                 size={isMobile ? "default" : "lg"}
-                className={`py-4 ${isMobile ? 'px-6 text-base w-full sm:w-auto' : 'py-6 px-10 text-xl'} font-terminal group mb-6`}
+                className={`py-4 ${isMobile ? 'px-6 text-sm w-auto' : 'py-6 px-10 text-xl'} font-terminal group mb-6`}
               >
                 <a 
                   href="http://jam.pieter.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Submit Your Entry Now
+                  Submit Entry
                   <Sparkles className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
                 </a>
               </Button>

@@ -48,9 +48,9 @@ const HeroContent: React.FC = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 mb-8">
-          <Button asChild variant="submit" size={isMobile ? "default" : "lg"} className={`py-4 sm:py-6 px-6 sm:px-10 text-base sm:text-xl font-terminal group ${isMobile ? 'w-full' : ''}`}>
+          <Button asChild variant="submit" size={isMobile ? "default" : "lg"} className={`py-4 sm:py-6 px-6 sm:px-10 text-sm sm:text-xl font-terminal group ${isMobile ? 'w-auto' : ''}`}>
             <a href="http://jam.pieter.com" target="_blank" rel="noopener noreferrer">
-              Submit Your Entry
+              Submit Entry
               <GamepadIcon className="inline-block ml-2 w-5 h-5 group-hover:animate-pulse-light" />
             </a>
           </Button>
